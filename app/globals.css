@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --black: #222;
+  --white: #ffffff;
+  --primary: #3a59d1;
+  --secondary: #57564f;
+  --light-secondary: #eee;
+  --tertiary: #fffff0;
+  --border: #a6aebf;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-black: var(--black);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-light-secondary: var(--light-secondary);
+  --color-border: var(--border);
+}
+
+@layer base {
+  h2 {
+    /* Default (mobile-first) styles */
+    @apply text-xl font-extrabold;
+
+    /* Responsive styles for md and up */
+    @variant md {
+      @apply text-2xl;
+    }
+
+    /* Responsive styles for lg and up */
+    @variant lg {
+      @apply text-5xl;
+    }
+
+    /* Responsive styles for xl and up */
+    @variant xl {
+      @apply text-6xl;
+    }
+
+    /* Responsive styles for 2xl and up */
+    @variant 2xl {
+      @apply text-7xl;
+    }
+  }
+  h4 {
+    /* Default (mobile-first) styles */
+    @apply text-base font-bold;
+
+    /* Responsive styles for md and up */
+    @variant md {
+      @apply text-xl;
+    }
+
+    /* Responsive styles for lg and up */
+    @variant lg {
+      @apply text-2xl;
+    }
+
+    /* Responsive styles for xl and up */
+    @variant xl {
+      @apply text-3xl;
+    }
+
+    /* Responsive styles for 2xl and up */
+    @variant 2xl {
+      @apply text-4xl;
+    }
+  }
+  h6 {
+    /* Default (mobile-first) styles */
+    @apply text-base font-bold;
+
+    /* Responsive styles for md and up */
+    @variant md {
+      @apply text-base;
+    }
+
+    /* Responsive styles for lg and up */
+    @variant lg {
+      @apply text-xl;
+    }
+
+    /* Responsive styles for xl and up */
+    @variant xl {
+      @apply text-2xl;
+    }
+
+    /* Responsive styles for 2xl and up */
+    @variant 2xl {
+      @apply text-2xl;
+    }
+  }
+  p {
+    /* Default (mobile-first) styles */
+    @apply text-xs;
+
+    /* Responsive styles for md and up */
+    @variant md {
+      @apply text-sm;
+    }
+
+    /* Responsive styles for lg and up */
+    @variant lg {
+      @apply text-lg leading-6;
+    }
+
+    /* Responsive styles for xl and up */
+    @variant xl {
+      @apply text-lg leading-8;
+    }
+
+    /* Responsive styles for 2xl and up */
+    @variant 2xl {
+      @apply text-2xl leading-8;
+    }
+  }
+}
+
+label {
+  @variant 2xl {
+    @apply font-bold text-xl leading-8;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--black);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* nav section */
+.nav-link {
+  position: relative;
+  /* Set initial text color */
+  color: var(--background);
+  transition: color 300ms ease-in-out;
+  width: 100px;
+}
+
+/* Create the sliding background pseudo-element */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--background);
+  transition: width 500ms ease-in-out;
+  z-index: -1; /* Keep the pseudo-element behind the text */
+}
+
+/* Animate on hover */
+.nav-link:hover::before {
+  width: 100%;
+}
+
+/* Change text color on hover */
+.nav-link:hover {
+  color: black;
+}
+
+.fade-in-delayed {
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s; /* 500ms delay */
+}
+
+.initial-hidden {
+  opacity: 0;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes slide-up-and-fade {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

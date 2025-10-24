@@ -45,7 +45,7 @@ const TimeLineItem: React.FC<{
         </div>
       </div>
       {index < TimeLineData.length - 1 && (
-        <hr className="border-black h-10 rotate-90 transform origin-center w-8 lg:w-9 xl:w-10 2xl:w-24 -translate-x-6.5 lg:-translate-x-7 lg:-translate-y-3.5 xl:-translate-x-6  -translate-y-2 xl:-translate-y-3 2xl:-translate-x-13" />
+        <hr className="border-black h-10 rotate-90 transform origin-center w-8 lg:w-9 xl:w-10 2xl:w-24 -translate-x-6.5 lg:-translate-x-7 lg:-translate-y-3.5 xl:-translate-x-7 2xl:-translate-x-14  -translate-y-2 xl:-translate-y-3" />
       )}
     </>
   );
@@ -53,10 +53,10 @@ const TimeLineItem: React.FC<{
 
 export default function Story() {
   return (
-    <div className="bg-white/70 bg-cover bg-center bg-[url('/story-bg.jpg')] bg-blend-overlay w-full h-90 lg:h-100 xl:h-150 p-5 md:p-10 xl:px-15 2xl:px-20">
-      <div className="flex flex-col justify-center gap-2 md:gap-4 lg:gap-6 xl:h-[inherit] xl:gap-8">
+    <div className="bg-white/70 bg-cover bg-center bg-[url('/story-bg.jpg')] bg-blend-overlay w-full h-90 lg:h-100 xl:h-120 2xl:h-150 px-5 md:px-10 xl:px-15 2xl:px-20">
+      <div className="flex flex-col justify-center gap-2 md:gap-4 lg:gap-6 h-[inherit] xl:gap-8">
         <h4>Our Story</h4>
-        <div className="flex flex-col 2xl:gap-10">
+        <div className="flex flex-col 2xl:gap-6">
           {TimeLineData?.map((item, index) => (
             <TimeLineItem
               key={item.title}

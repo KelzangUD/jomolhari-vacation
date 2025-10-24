@@ -102,7 +102,7 @@ export default function Nav() {
               <NavLink routeName="Gallery" href="/gallery" />
             </button>
           </li>
-          <li>
+          <li className="mt-2">
             <Link href="/contact-us" onClick={() => setShowMenu(false)}>
               <PrimaryButton text="Contact Us" />
             </Link>

@@ -1,6 +1,6 @@
 export default function Mission() {
   return (
-    <div className="p-5 md:p-10 xl:px-15 2xl:px-20 xl:py-30 md:mt-10 lg:mt-20 xl:mt-15 bg-light-secondary">
+    <div className="p-5 md:p-10 xl:p-15 2xl:p-20  md:mt-10 lg:mt-20 2xl:mt-25  bg-light-secondary">
       <h4>Mission</h4>
       <p className="my-2 xl:my-4 text-justify">
         At Jomolhari Vacation, our mission is to provide authentic and

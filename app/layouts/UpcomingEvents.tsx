@@ -22,16 +22,16 @@ export default function UpcomingEvents() {
   return (
     <>
       {data?.length > 0 && (
-        <div className="p-5 md:p-10 xl:px-15 2xl:px-20 xl:py-30 bg-light-secondary">
+        <div className="p-5 pb-10 md:pb-15 xl:pb-20 2xl:pb-25 md:p-10 xl:p-15 2xl:p-20 bg-light-secondary">
           <h4>Upcoming Events</h4>
-          <p className="md:mt-4 mb-4 md:mb-10">
+          <p className="mb-4 md:mb-6 2xl:mt-4 ">
             Join our scheduled adventures and cultural festivals in Bhutan.
           </p>
           {data?.map((item) => (
             <Card
               image={item?.image}
               title={item?.title}
-              height="h-50 md:h-60 lg:h-80 xl:h-100 2xl:h-150"
+              height="h-50 md:h-60 lg:h-80 xl:h-100 2xl:h-120"
               date={item?.date}
               location={item?.location}
               key={item?.title}

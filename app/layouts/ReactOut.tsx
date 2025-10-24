@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function ReactOut() {
   return (
-    <div className="relative bg-cover bg-bottom bg-[url('/contact.png')] w-full h-50 md:h-60 lg:h-70 xl:h-80 2xl:h-100 text-black p-5 md:p-10 xl:px-15 2xl:px-20">
-      <div className="absolute inset-0 bg-white opacity-65 z-5" />
-      <div className="absolute z-10 flex flex-col justify-center xl:h-[inherit] gap-3 md:gap-4 xl:gap-6 2xl:gap-8">
+    <div className="relative bg-cover bg-center bg-[url('/contact.png')] w-full h-50 md:h-60 lg:h-70 xl:h-78 2xl:h-80 text-black p-5 md:p-10 xl:px-15 2xl:px-20">
+      <div className="absolute inset-0 bg-white opacity-85 z-5" />
+      <div className="absolute z-10 flex flex-col justify-center gap-3 md:gap-4 xl:gap-6">
         <h4>
           Reach Out Anytime <br />
           For Adventure Or Info
@@ -15,7 +15,7 @@ export default function ReactOut() {
           <br /> or just want to chat about travel- don’t hesitate to reach out
         </p>
         <Link href="">
-          <button className="bg-white py-2 px-6 text-xs md:text-sm 2xl:text-2xl rounded-md cursor-pointer shadow-sm">
+          <button className="bg-white py-2 px-6 text-xs md:text-sm 2xl:text-xl rounded-md cursor-pointer shadow-sm">
             Contact Us
           </button>
         </Link>

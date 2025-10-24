@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white p-5 md:p-10 xl:px-15 2xl:px-20 py-3 items-center w-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-1 xl:my-10">
+    <footer className="bg-black text-white p-5 md:p-10 xl:px-15 2xl:px-20 items-center w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
         <div>
           <h4>Jomolhari Vacation</h4>
           <p className="my-4 text-sm 2xl:text-lg">

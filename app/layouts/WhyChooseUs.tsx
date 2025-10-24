@@ -21,14 +21,14 @@ const Card: React.FC<CardProps> = ({ image, title, desc }) => {
         />
       </div>
       <p className="font-bold my-2 lg:my-4">{title}</p>
-      <p className="lg:mt-4 text-secondary text-xs lg:text-sm 2xl:text-xl">{desc}</p>
+      <p className="lg:mt-4 text-secondary text-xs lg:text-sm 2xl:text-base">{desc}</p>
     </div>
   );
 };
 
 export default function WhyChooseUs() {
   return (
-    <div className="p-5 md:p-10 xl:px-15 2xl:px-20 xl:py-30 bg-white">
+    <div className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-white">
       <h4>Why Choose Us?</h4>
       <h2 className="lg:mt-5 xl:mt-10">Your Journey, Our Expertise</h2>
       <p className="text-justify my-2 xl:my-4">
@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
         Bhutan, ensuring your adventure is safe, memorable, and respectful of
         the local culture.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-10 my-4 lg:my-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mt-4 lg:mt-10">
         <Card
           image={guidesImage}
           title="Local Guides"

@@ -32,7 +32,7 @@ const TeamMemberCard: React.FC<{
 
 export default function Team() {
   return (
-    <div className="p-5 md:p-10 xl:px-15 2xl:px-20 xl:py-30 bg-light-secondary">
+    <div className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-light-secondary">
       <h4>Team</h4>
       <p className="my-2 xl:my-4 text-justify">
         At <span className="font-semibold">Jomolhari Vacation</span>, our

@@ -28,9 +28,9 @@ const Card: React.FC<CardProps> = ({ image, title, desc }) => {
 
 export default function Values() {
   return (
-    <div className="p-5 md:p-10 xl:px-15 2xl:px-20 xl:py-30 bg-white">
+    <div className="p-5 md:p-10 xl:px-15 2xl:p-20 bg-white">
       <h4>Values</h4>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-10 my-2 md:my-5 xl:my-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-6 my-2 md:my-5">
         <Card
           image={mountainImage}
           title="Authenticity"

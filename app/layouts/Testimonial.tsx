@@ -53,7 +53,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   review,
 }) => {
   return (
-    <div className="rounded-2xl border border-border flex flex-col justify-between p-2 md:p-4 lg:p-6 2xl:p-8">
+    <div className="rounded-2xl border border-border flex flex-col justify-between p-2 md:p-4 lg:p-6">
       <div>
         <div className="relative w-5 h-5 lg:w-7 lg:h-7 2xl:w-10 2xl:h-10">
           <Image
@@ -71,9 +71,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         <div className="flex gap-2 mt-5">
           {review > 0 &&
             Array.from({ length: review }, (_, index) => (
-              <div className="relative w-3 h-3 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6">
+              <div
+                className="relative w-3 h-3 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6"
+                key={"star" + index}
+              >
                 <Image
-                  key={"star" + index}
                   src={starIcon}
                   alt={"star" + index}
                   fill
@@ -101,15 +103,15 @@ export default function Testimonial() {
     );
   };
   return (
-    <div className="bg-white xl:py-30">
-      <div className="p-5 md:p-10 xl:px-15 2xl:px-20">
+    <div className="bg-white pt-5 md:py-10 xl:py-15 2xl:py-20">
+      <div className="px-5 md:px-10 xl:px-15 2xl:px-20">
         <h4>What our clients say</h4>
         <p className="my-1 md:my-2 xl:my-4">
           Every trek tells a story—here are a few from those who walked the
           trails with us.
         </p>
       </div>
-      <div className="relative w-full overflow-hidden pb-10 xl:py-6">
+      <div className="relative w-full overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{
@@ -119,7 +121,7 @@ export default function Testimonial() {
           {testimonialData.map((item) => (
             <div
               key={item.testimonial}
-              className="w-full flex-shrink-0 flex justify-center items-center xl:px-4"
+              className="w-full flex-shrink-0 flex justify-center items-center xl:px-2"
             >
               <div className="max-w-[80%] w-full">
                 <TestimonialCard
@@ -127,6 +129,7 @@ export default function Testimonial() {
                   name={item.name}
                   type={item.type}
                   review={item.review}
+                   key={item.testimonial}
                 />
               </div>
             </div>

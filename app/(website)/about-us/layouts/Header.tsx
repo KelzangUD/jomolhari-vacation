@@ -1,22 +1,84 @@
-import Image from "next/image";
+"use client";
 
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import Link from "next/link";
+import arrowRightIcon from "@/public/arrow-right.svg";
+// import PrimaryButton from "../ui/PrimaryButton";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        titleRef.current,
+        { x: -200, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+      gsap.fromTo(
+        subtitleRef.current,
+        { y: 10, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          // delay: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: subtitleRef.current,
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    },
+    { scope: sectionRef, revertOnUpdate: true }
+  );
+
   return (
-    <div className="relative bg-linear-to-t from-sky-500 to-indigo-500 w-full h-60 md:h-80 lg:h-100 xl:h-120 text-white bg-black/50">
-      <h1 className="absolute bg-linear-to-b from-white/80 via-white via-[50%] to-primary bg-clip-text text-5xl text-transparent font-bold md:text-7xl lg:text-9xl left-1/2 -translate-x-1/2 top-22 md:top-30 xl:top-40 uppercase animate-[slide-up-and-fade_1.5s_ease-out_forwards_0.5s] opacity-0 tracking-widest">
-        Jomolhari
-      </h1>
-      <h1 className="absolute bg-linear-to-b from-primary via-primary via-[50%] to-white bg-clip-text text-transparent font-bold text-4xl md:text-6xl lg:text-8xl left-1/2 -translate-x-1/2 top-33 md:top-50 lg:top-65 xl:top-75 uppercase z-10 animate-[slide-up-and-fade_1.5s_ease-out_forwards_0.5s] opacity-0 tracking-wider">
-        Vacation
-      </h1>
-      <div className="absolute w-full h-45 md:h-70 lg:h-100 xl:h-120 top-15 md:top-20 2xl:top-25">
-        <Image
-          src="/jomolhari.svg"
-          alt="jomolhari bg"
-          fill
-          className="object-cover"
-        />
+    <div
+      ref={sectionRef}
+      className="bg-cover bg-center xl:bg-bottom text-white bg-[url('/hero.png')] w-full h-120 lg:h-150 xl:h-190 2xl:h-200 px-5 md:px-10 lg:px-10 xl:px-15 2xl:px-20"
+    >
+      <div className="flex flex-col justify-center h-[inherit] gap-6 xl:gap-8">
+        <h1
+          ref={titleRef}
+          className="font-bold text-4xl mt-10 xl:mt-0 xl:leading-18 lg:text-6xl xl:text-7xl"
+        >
+          Experience Bhutan, <br />
+          Beyond Ordinary
+        </h1>
+        <p
+          ref={subtitleRef}
+          className="2xl:text-2xl xl:leading-8 2xl:leading-10 tracking-wide"
+        >
+          From alpine meadows to nomadic camps,
+          <br /> <span className="font-bold">Jomolhari Vacation</span> brings
+          you closer to <span className="font-bold">Bhutan’s</span> <br /> wild
+          beauty with expert guides and seamless <br /> planning.
+        </p>
+        {/* <Link href="/about-us">
+          <PrimaryButton
+            text="About Us"
+            icon={arrowRightIcon}
+            style="flex justify-between items-center gap-4"
+          />
+        </Link> */}
       </div>
     </div>
   );

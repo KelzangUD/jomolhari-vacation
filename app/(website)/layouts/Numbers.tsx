@@ -48,7 +48,7 @@ const NumberCard: React.FC<NumberCardProps> = ({ icon, title, number }) => {
     <div ref={containerRef} className="bg-white flex justify-between items-center p-3 lg:p-6 rounded-2xl drop-shadow-sm">
       <div className="text-black">
         <p className="my-1 md:my-2">{title}</p>
-        <span  ref={numberRef} className="font-bold ml:font-extrabold ml:text-xl">{number}</span>
+        <span  ref={numberRef} className="font-bold ml:font-extrabold ml:text-xl xl:text-3xl">{number}</span>
       </div>
       <div className="relative w-6 h-6 xl:w-10 xl:h-10">
         <Image

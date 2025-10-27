@@ -23,7 +23,7 @@ export default function Hero() {
         {
           x: 0,
           opacity: 1,
-          duration: 1,
+          duration: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: titleRef.current,
@@ -38,7 +38,7 @@ export default function Hero() {
           y: 0,
           opacity: 1,
           duration: 1,
-          delay: 0.5,
+          // delay: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: subtitleRef.current,
@@ -53,7 +53,7 @@ export default function Hero() {
   return (
     <div
       ref={sectionRef}
-      className="bg-cover bg-center xl:bg-bottom text-white bg-[url('/hero.png')] w-full h-120 lg:h-150 xl:h-190 2xl:h-200 px-5 md:px-10 lg:px-10 xl:px-15 2xl:px-20"
+      className="-mt-60 bg-cover bg-center xl:bg-bottom text-white bg-[url('/hero.png')] w-full h-120 lg:h-150 xl:h-190 2xl:h-200 px-5 md:px-10 lg:px-10 xl:px-15 2xl:px-20"
     >
       <div className="flex flex-col justify-center h-[inherit] gap-6 xl:gap-8">
         <h1

@@ -42,12 +42,12 @@ const Card: React.FC<CardProps> = ({
         cardRef.current,
         {
           y: 20,
-          opacity: 0,
+          opacity: 0.5,
         },
         {
           y: 0,
           opacity: 1,
-          duration: 2,
+          duration: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: cardRef.current,

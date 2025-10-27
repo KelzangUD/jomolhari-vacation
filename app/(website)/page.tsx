@@ -1,3 +1,4 @@
+import ParallaxPage  from "./layouts/ParallaxPage";
 import FeaturePackage from "./layouts/FeaturePackages";
 import Hero from "./layouts/Hero";
 import WhyChooseUs from "./layouts/WhyChooseUs";
@@ -9,7 +10,8 @@ import ReactOut from "./layouts/ReactOut";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <ParallaxPage />
+      {/* <Hero /> */}
       <FeaturePackage />
       <WhyChooseUs />
       <Numbers />

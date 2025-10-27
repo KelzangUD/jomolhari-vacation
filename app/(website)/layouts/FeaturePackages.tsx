@@ -7,7 +7,7 @@ import PrimaryButton from "../ui/PrimaryButton";
 
 export default function FeaturePackage() {
   return (
-    <div className="p-5 md:p-10 xl:p-15 2xl:p-20  bg-light-secondary">
+    <div className="z-10 p-5 md:p-10 xl:p-15 2xl:px-20 bg-background">
       <h4 className="fade-in-delayed">Feature Packages</h4>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 my-5 md:my-10">
         <Card

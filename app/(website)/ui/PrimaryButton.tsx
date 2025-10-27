@@ -1,4 +1,13 @@
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import Image, { StaticImageData } from "next/image";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type PrimaryButtonProps = {
   text: string;
@@ -13,9 +22,29 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   style,
   icon,
 }) => {
+  const buttonRef = useRef(null);
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        buttonRef.current,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: buttonRef.current,
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    },
+    { scope: buttonRef, revertOnUpdate: true }
+  );
   return (
     <button
-      className={`bg-primary py-2 px-4 rounded-md overflow-hidden cursor-pointer text-sm lg:text-base text-white ${style}`}
+      ref={buttonRef}
+      className={`bg-primary py-2 px-4 rounded-md overflow-hidden cursor-pointer text-sm lg:text-base text-white ${style} hover:bg-blue-700`}
       onClick={onClick}
     >
       {text}

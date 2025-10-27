@@ -12,7 +12,7 @@ export default function Nav() {
       <div className="hidden md:flex justify-between items-center w-stretch mx-auto px-10 2xl:px-20 py-3">
         <Link href="/">
           <button className="cursor-pointer transition delay-150 duration-300 ease-in hover:scale-110 pt-1">
-            <Image src="./logo.svg" alt="logo" width={48} height={48} />
+            <Image src="./logo.svg" alt="logo" width={35} height={35} />
           </button>
         </Link>
         <div>

@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import CursorFollower from "./components/CursorFollower";
-import Container from "./ui/container";
-import Nav from "./Nav";
-import Footer from "./Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,14 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Nav />
-        <Container>
-          {children}
-          <Footer />
-        </Container>
-        <CursorFollower />
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

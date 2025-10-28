@@ -2,7 +2,6 @@ import Image, { StaticImageData } from "next/image";
 import calenderIcon from "@/public/calendar.svg";
 import markerIcon from "@/public/marker.svg";
 import trophyIcon from "@/public/trophy.svg";
-import { time } from "console";
 
 const TimeLineData = [
   {
@@ -45,7 +44,7 @@ const TimeLineItem: React.FC<{
         </div>
       </div>
       {index < TimeLineData.length - 1 && (
-        <hr className="border-black h-10 rotate-90 transform origin-center w-8 lg:w-9 xl:w-10 2xl:w-24 -translate-x-6.5 lg:-translate-x-7 lg:-translate-y-3.5 xl:-translate-x-7 2xl:-translate-x-14  -translate-y-2 xl:-translate-y-3" />
+        <hr className="border-black h-10 rotate-90 transform origin-center w-8 lg:w-9 xl:w-10 2xl:w-24 -translate-x-6.5 lg:-translate-x-7 lg:-translate-y-3.5 xl:-translate-x-7 2xl:-translate-x-13.5  -translate-y-2 xl:-translate-y-3" />
       )}
     </>
   );

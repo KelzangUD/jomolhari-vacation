@@ -73,7 +73,7 @@ export default function FeaturePackage() {
         />
       </div>
       <div className="">
-        <Link href="">
+        <Link href="/trails">
           <PrimaryButton
             text="View All"
             icon={arrowRightIcon}

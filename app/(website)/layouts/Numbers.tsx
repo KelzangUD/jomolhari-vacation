@@ -18,7 +18,7 @@ type NumberCardProps = {
 gsap.registerPlugin(ScrollTrigger);
 
 const NumberCard: React.FC<NumberCardProps> = ({ icon, title, number }) => {
-    const numberRef = useRef<HTMLSpanElement | null>(null);
+  const numberRef = useRef<HTMLSpanElement | null>(null);
   const containerRef = useRef(null);
   useGSAP(
     () => {
@@ -45,10 +45,18 @@ const NumberCard: React.FC<NumberCardProps> = ({ icon, title, number }) => {
     { scope: containerRef, dependencies: [number] }
   );
   return (
-    <div ref={containerRef} className="bg-white flex justify-between items-center p-3 lg:p-6 rounded-2xl drop-shadow-sm">
+    <div
+      ref={containerRef}
+      className="bg-white flex justify-between items-center p-3 lg:p-6 rounded-2xl drop-shadow-sm"
+    >
       <div className="text-black">
         <p className="my-1 md:my-2">{title}</p>
-        <span  ref={numberRef} className="font-bold ml:font-extrabold ml:text-xl xl:text-3xl">{number}</span>
+        <span
+          ref={numberRef}
+          className="font-bold ml:font-extrabold ml:text-xl xl:text-3xl"
+        >
+          {number}
+        </span>
       </div>
       <div className="relative w-6 h-6 xl:w-10 xl:h-10">
         <Image
@@ -70,11 +78,11 @@ export default function Numbers() {
     () => {
       gsap.fromTo(
         titleRef.current,
-        { x: -200, opacity: 0 },
+        { y: 10, opacity: 0 },
         {
-          x: 0,
+          y: 0,
           opacity: 1,
-          duration: 1,
+          duration: 2,
           ease: "power2.out",
           scrollTrigger: {
             trigger: titleRef.current,

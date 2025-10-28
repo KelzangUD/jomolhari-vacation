@@ -14,7 +14,7 @@ export default function ReactOut() {
           our services,
           <br /> or just want to chat about travel- don’t hesitate to reach out
         </p>
-        <Link href="">
+        <Link href="/contact-us">
           <button className="bg-white py-2 px-6 text-xs md:text-sm 2xl:text-xl rounded-md cursor-pointer shadow-sm">
             Contact Us
           </button>

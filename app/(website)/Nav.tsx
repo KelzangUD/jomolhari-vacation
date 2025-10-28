@@ -9,7 +9,7 @@ export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <nav className="fixed xl:left-1/2 xl:-translate-x-1/2 z-150 top-0 xl:top-5 backdrop-blur-2xl xl:rounded-full bg-black/50 w-full  xl:w-10/11 2xl:w-11/15 2xl:max-w-9xl">
-      <div className="hidden md:flex justify-between items-center w-stretch mx-auto px-10 2xl:px-20 py-3">
+      <div className="hidden md:flex justify-between items-center w-stretch mx-auto px-10 2xl:px-15 py-3">
         <Link href="/">
           <button className="cursor-pointer transition delay-150 duration-300 ease-in hover:scale-110 pt-1">
             <Image src="./logo.svg" alt="logo" width={35} height={35} />

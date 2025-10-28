@@ -41,13 +41,13 @@ const Card: React.FC<CardProps> = ({
       gsap.fromTo(
         cardRef.current,
         {
-          y: 20,
-          opacity: 0.5,
+          y: 10,
+          opacity: 0,
         },
         {
           y: 0,
           opacity: 1,
-          duration: 0.5,
+          duration: 3,
           ease: "power2.out",
           scrollTrigger: {
             trigger: cardRef.current,

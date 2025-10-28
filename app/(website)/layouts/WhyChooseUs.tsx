@@ -120,7 +120,7 @@ export default function WhyChooseUs() {
     { scope: sectionRef }
   );
   return (
-    <div ref={sectionRef} className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-white">
+    <div ref={sectionRef} className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-background">
       <h4 className="fade-in-delayed">Why Choose Us?</h4>
       <h2 className="fade-in-delayed lg:mt-5 xl:mt-10">
         Your Journey, Our Expertise

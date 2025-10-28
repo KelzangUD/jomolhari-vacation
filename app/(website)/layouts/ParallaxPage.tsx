@@ -26,15 +26,16 @@ export default function ParallaxPage() {
           scrub: 1,
         },
       });
+      // tl.fromTo(".hero-text", { y: 0 }, { y: 500, opacity: 0.5 }, 0);
 
-      tl.fromTo(".sky-layer", { y: 0 }, { y: -200 }, 0)
-        .fromTo(".cloud1-layer", { y: 0 }, { y: -200 }, 0)
-        .fromTo(".cloud2-layer", { y: 0 }, { y: -200 }, 0)
-        .fromTo(".cloud3-layer", { y: 0 }, { y: -200 }, 0)
-        .fromTo(".mount-bg-layer", { y: 0 }, { y: -200 }, 0)
-        .fromTo(".mount-mg-layer", { y: 0 }, { y: -200 }, 0)
-        .fromTo(".mount-fg-layer", { y: 0 }, { y: -200 }, 0)
-        .fromTo(".hero-text", { y: 0 }, { y: 100, opacity: 0.5 }, 0);
+      tl.fromTo(".sky-layer", { y: 0 }, { y: 0 }, 0)
+        .fromTo(".cloud1-layer", { y: 50 }, { y: 0 }, 0)
+        .fromTo(".cloud2-layer", { y: -100 }, { y: -170 }, 0)
+        .fromTo(".cloud3-layer", { y: 50 }, { y:-0 }, 0)
+        .fromTo(".mount-bg-layer", { y: 140 }, { y: 10 }, 0)
+        .fromTo(".mount-mg-layer", { y: 140 }, { y: 5 }, 0)
+        .fromTo(".mount-fg-layer", { y: 140 }, { y: 10 }, 0)
+        .fromTo(".hero-text", { y: -20 }, { y: 500, opacity: 0.5 }, 0);
     },
     { scope: containerRef }
   );
@@ -87,9 +88,8 @@ export default function ParallaxPage() {
     <>
       <section
         ref={containerRef}
-        className="relative w-full h-120 sm:h-160 2xl:h-screen overflow-hidden bg-background"
+        className="relative w-full h-140 md:h-180 2xl:h-screen overflow-hidden bg-background"
       >
-        {/* Sky Layer */}
         <div className="sky-layer absolute inset-0 w-full h-full">
           <Image
             src="/main-sky.jpg"
@@ -99,9 +99,7 @@ export default function ParallaxPage() {
             priority
           />
         </div>
-
-        {/* Background Mountain Layer */}
-        <div className="mount-bg-layer absolute inset-0 w-full h-full">
+        <div className="mount-bg-layer absolute inset-0 w-full h-[inherit] z-5">
           <Image
             src="/mountBg.webp"
             alt="Background Mountains"
@@ -110,9 +108,7 @@ export default function ParallaxPage() {
             priority
           />
         </div>
-
-        {/* Middle Mountain Layer */}
-        <div className="mount-mg-layer absolute inset-0 w-full h-full">
+        <div className="mount-mg-layer absolute inset-0 w-full h-[inherit] z-7">
           <Image
             src="/mountMg.png"
             alt="Middle Mountains"
@@ -120,9 +116,7 @@ export default function ParallaxPage() {
             className="object-cover"
           />
         </div>
-
-        {/* Cloud 2 Layer */}
-        <div className="cloud2-layer absolute inset-0 w-full h-full">
+        <div className="cloud2-layer absolute inset-0 w-full h-[inherit]">
           <Image
             src="/cloud2.webp"
             alt="Cloud 2"
@@ -130,9 +124,7 @@ export default function ParallaxPage() {
             className="object-cover"
           />
         </div>
-
-        {/* Foreground Mountain Layer */}
-        <div className="mount-fg-layer absolute inset-0 w-full h-full">
+        <div className="mount-fg-layer absolute inset-0 w-full h-[inherit] z-7">
           <Image
             src="/mountFg.png"
             alt="Foreground Mountains"
@@ -140,9 +132,7 @@ export default function ParallaxPage() {
             className="object-cover"
           />
         </div>
-
-        {/* Cloud 1 Layer */}
-        <div className="cloud1-layer absolute inset-0 w-full h-full z-10">
+        <div className="cloud1-layer absolute inset-0 w-full h-[inherit] z-10">
           <Image
             src="/cloud1.png"
             alt="Cloud 1"
@@ -150,9 +140,7 @@ export default function ParallaxPage() {
             className="object-cover"
           />
         </div>
-
-        {/* Cloud 3 Layer */}
-        <div className="cloud3-layer absolute inset-0 w-full h-full z-10">
+        <div className="cloud3-layer absolute inset-0 w-full h-[inherit] z-10">
           <Image
             src="/cloud3.png"
             alt="Cloud 3"
@@ -160,10 +148,8 @@ export default function ParallaxPage() {
             className="object-cover"
           />
         </div>
-
-        {/* Hero Text */}
-        <div className="hero-text absolute inset-0 flex flex-col items-center justify-center text-center">
-          <h1 className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-wider mb-8">
+        <div className="hero-text absolute inset-0 flex flex-col items-center justify-center text-center z-6">
+          <h1 className="text-background text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-wider md:mb-8">
             Jomolhari Vacation
           </h1>
         </div>

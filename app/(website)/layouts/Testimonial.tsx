@@ -103,7 +103,7 @@ export default function Testimonial() {
     );
   };
   return (
-    <div className="bg-white pt-5 md:py-10 xl:py-15 2xl:py-20">
+    <div className="bg-[#fafafb] pt-5 md:py-10 xl:py-15 2xl:py-20">
       <div className="px-5 md:px-10 xl:px-15 2xl:px-20">
         <h4>What our clients say</h4>
         <p className="my-1 md:my-2 xl:my-4">

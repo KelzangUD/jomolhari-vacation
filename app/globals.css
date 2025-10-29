@@ -24,7 +24,7 @@
 @layer base {
   h2 {
     /* Default (mobile-first) styles */
-    @apply text-xl font-extrabold;
+    @apply text-xl font-bold;
 
     /* Responsive styles for md and up */
     @variant md {
@@ -48,7 +48,7 @@
   }
   h4 {
     /* Default (mobile-first) styles */
-    @apply text-base font-bold;
+    @apply text-xl font-semibold;
 
     /* Responsive styles for md and up */
     @variant md {
@@ -72,11 +72,11 @@
   }
   h6 {
     /* Default (mobile-first) styles */
-    @apply text-base font-bold;
+    @apply text-base font-semibold;
 
     /* Responsive styles for md and up */
     @variant md {
-      @apply text-base;
+      @apply text-xl;
     }
 
     /* Responsive styles for lg and up */

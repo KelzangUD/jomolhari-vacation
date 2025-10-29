@@ -5,7 +5,7 @@ export default function Visa() {
   return (
     <div className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-cover bg-top bg-gray-100 bg-[url('/map.svg')] bg-blend-overlay">
       <h4 className="mt-15">Visa Information</h4>
-      <p className="my-2">
+      <p className="my-2 text-xs md:text-base">
         Guidance on visa applications, documents, and requirements.
       </p>
       <div className="my-6 flex flex-col gap-4">
@@ -27,7 +27,7 @@ export default function Visa() {
           <p className="text-xs md:text-base">
             As part of the visa application process, travelers must pay:
           </p>
-          <ul className="flex flex-col gap-2 mt-3 list-disc ml-8">
+          <ul className="flex flex-col gap-2 mt-3 list-disc ml-8 text-xs md:text-sm">
             <li>
               <span className="font-semibold">
                 Sustainable Development Fee (SDF):
@@ -56,7 +56,7 @@ export default function Visa() {
           <p className="text-xs md:text-base">
             To apply for a visa online, please prepare:
           </p>
-          <ul className="flex flex-col gap-2 mt-3 list-disc ml-8">
+          <ul className="flex flex-col gap-2 mt-3 list-disc ml-8 text-xs md:text-sm">
             <li>
               A{" "}
               <span className="font-semibold">
@@ -90,7 +90,7 @@ export default function Visa() {
           <p className="text-xs md:text-base">
             Follow these simple steps to complete your application:
           </p>
-          <ul className="flex flex-col gap-2 mt-3 list-disc ml-8">
+          <ul className="flex flex-col gap-2 mt-3 list-disc ml-8 text-xs md:text-sm">
             <li>
               <span className="font-semibold">
                 Sign our Pledge of Friendship

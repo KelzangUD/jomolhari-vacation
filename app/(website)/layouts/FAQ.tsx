@@ -96,7 +96,7 @@ export default function FAQ() {
       <div className="gap-4 lg:gap-6 mt-4 lg:mt-10 text-justify">
         {faqData?.map((item, index) => (
           <details key={item?.question}>
-            <summary className="text-sm md:text-base lg:text-xl xl:text-xl">
+            <summary className="text-sm md:text-base lg:text-xl xl:text-xl list-none">
               {index + 1}. {item?.question}
             </summary>
             <p className="font-normal text-sm md:text-base my-2 text-secondary">{item?.answer}</p>

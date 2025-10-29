@@ -61,13 +61,21 @@ const Card: React.FC<CardProps> = ({
   return (
     <div
       ref={cardRef}
-      className="relative rounded-2xl overflow-hidden slide-up-fade-in "
+      className="relative rounded-2xl overflow-hidden hover:cursor-pointer group"
     >
+      {/* Image wrapper */}
       <div className={`w-full relative ${height}`}>
-        <Image src={image} alt={title} fill className="object-cover" />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover transform transition-transform duration-500 ease-out group-hover:scale-110"
+        />
       </div>
+
+      {/* Floating button */}
       <div className="absolute top-5 right-5 z-50 cursor-pointer">
-        <button className="bg-white text-black rounded-full p-2 cursor-pointer shadow-md hover:scale-105 transition-transform duration-200">
+        <button className="bg-white text-black rounded-full p-2 shadow-md hover:scale-105 transition-transform duration-200">
           <Image
             src="/arrow-up-right.svg"
             alt="arrow-up-right"
@@ -76,7 +84,11 @@ const Card: React.FC<CardProps> = ({
           />
         </button>
       </div>
+
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-40 z-10" />
+
+      {/* Text content */}
       <div className="absolute inset-0 z-20 flex flex-col justify-end p-4">
         <h6 className="font-bold text-white lg:text-xl 2xl:text-2xl">
           {title}
@@ -84,9 +96,13 @@ const Card: React.FC<CardProps> = ({
         <p className="text-light-secondary lg:text-base 2xl:text-xl">
           {subtitle}
         </p>
+
         {author && role && (
-          <p className="text-light-secondary lg:text-base 2xl:text-xl">{`${author} | ${role}`}</p>
+          <p className="text-light-secondary lg:text-base 2xl:text-xl">
+            {`${author} | ${role}`}
+          </p>
         )}
+
         <p className="text-light-secondary lg:text-base 2xl:text-xl mb-3 xl:mb-4">
           {date}
         </p>

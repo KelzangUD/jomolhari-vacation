@@ -53,21 +53,26 @@ export default function UpcomingEvents() {
   return (
     <>
       {data?.length > 0 && (
-        <div ref={sectionRef} className="p-5 pb-10 md:pb-15 xl:pb-20 2xl:pb-25 md:p-10 xl:p-15 2xl:p-20 bg-light-secondary">
+        <div
+          ref={sectionRef}
+          className="p-5 pb-10 md:pb-15 xl:pb-20 2xl:pb-25 md:p-10 xl:p-15 2xl:p-20 bg-light-secondary"
+        >
           <h4 ref={titleRef}>Upcoming Events</h4>
           <p ref={subtitleRef} className="mb-4 md:mb-6 2xl:mt-4 ">
             Join our scheduled adventures and cultural festivals in Bhutan.
           </p>
-          {data?.map((item) => (
-            <Card
-              image={item?.image}
-              title={item?.title}
-              height="h-50 md:h-60 lg:h-80 xl:h-100 2xl:h-120"
-              date={item?.date}
-              location={item?.location}
-              key={item?.title}
-            />
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 my-5 md:my-10">
+            {data?.map((item) => (
+              <Card
+                image={item?.image}
+                title={item?.title}
+                height="h-60 lg:h-80 xl:h-100"
+                date={item?.date}
+                location={item?.location}
+                key={item?.title}
+              />
+            ))}
+          </div>
         </div>
       )}
     </>

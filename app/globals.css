@@ -160,6 +160,12 @@ summary {
     transform-origin: 50%;
   }
 }
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::marker {
+  display: none;
+}
 /* Rotate the line when open */
 details[open] summary::after {
   transform: rotate(0deg);

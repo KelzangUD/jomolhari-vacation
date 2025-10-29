@@ -171,7 +171,7 @@ export default function ImageGrid() {
             (sum, imageIndex) => sum + imageLayouts[imageIndex].colSpan,
             0
           );
-          
+
           return (
             <div
               key={rowIndex}
@@ -185,7 +185,7 @@ export default function ImageGrid() {
                 return (
                   <div
                     key={imageIndex}
-                    className="relative h-[150px] lg:h-[220px] rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
+                    className="relative h-[150px] lg:h-[250px] rounded-lg overflow-hidden shadow-lg group"
                     style={{
                       gridColumn: `span ${layout.colSpan}`,
                     }}
@@ -194,7 +194,7 @@ export default function ImageGrid() {
                       src={imagesData[imageIndex].src}
                       alt={imagesData[imageIndex].alt}
                       fill
-                      className="object-cover"
+                      className="object-cover transform transition-transform duration-500 ease-out group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 20vw"
                     />
                   </div>

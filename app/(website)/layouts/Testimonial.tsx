@@ -183,7 +183,7 @@ export default function Testimonial() {
         <div className="absolute inset-0 flex justify-between items-center mb-6 lg:mb-0 px-2 md:px-4">
           <button
             onClick={handlePrev}
-            className={`bg-white/60 hover:bg-white text-black rounded-full p-1 md:p-2 shadow-md backdrop-blur-sm transition-opacity ${
+            className={`bg-white/60 hover:bg-white text-black rounded-full px-1 py-0.5 md:px-2 md:py-1 shadow-md backdrop-blur-sm transition-opacity ${
               currentIndex > 0 ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
@@ -191,7 +191,7 @@ export default function Testimonial() {
           </button>
           <button
             onClick={handleNext}
-            className={`bg-white/60 hover:bg-white text-black rounded-full p-1 md:p-2 shadow-md backdrop-blur-sm transition-opacity ${
+            className={`bg-white/60 hover:bg-white text-black rounded-full px-1 py-0.5 md:px-2 md:py-1 shadow-md backdrop-blur-sm transition-opacity ${
               currentIndex < testimonialData.length - 1
                 ? "opacity-100"
                 : "opacity-0 pointer-events-none"

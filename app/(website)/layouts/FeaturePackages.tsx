@@ -58,18 +58,18 @@ export default function FeaturePackage() {
       className="z-10 p-5 md:p-10 xl:p-15 2xl:py-20 2xl:px-20 bg-white"
     >
       <h4 ref={titleRef}>Feature Packages</h4>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 my-5 md:my-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 my-5 md:my-10">
         <Card
           image={jomolhariTrekImage}
           title="Jomolhari Trek"
           subtitle="3D4N | Nu.10,500/-"
-          height="h-50 lg:h-70 xl:h-80"
+          height="h-40 lg:h-60 xl:h-70"
         />
         <Card
           image={snowManTrek}
           title="Snowman Trek"
           subtitle="25D24N | Nu.100,500/-"
-          height="h-50 lg:h-70 xl:h-80"
+          height="h-40 lg:h-60 xl:h-70"
         />
       </div>
       <div className="">

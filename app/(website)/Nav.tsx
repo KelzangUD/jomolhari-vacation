@@ -21,7 +21,10 @@ export default function Nav() {
               <NavLink routeName="About Us" href="/about-us" />
             </li>
             <li className="flex-grow">
-              <NavLink routeName="Trails" href="/trails" />
+              <NavLink routeName="Treks" href="/treks" />
+            </li>
+            <li className="flex-grow">
+              <NavLink routeName="Visa" href="/visa" />
             </li>
             <li className="flex-grow">
               <NavLink routeName="Blogs" href="/blogs" />
@@ -89,7 +92,12 @@ export default function Nav() {
           </li>
           <li className="">
             <button onClick={() => setShowMenu(false)}>
-              <NavLink routeName="Trails" href="/trails" />
+              <NavLink routeName="Treks" href="/treks" />
+            </button>
+          </li>
+          <li className="">
+            <button onClick={() => setShowMenu(false)}>
+              <NavLink routeName="Visa" href="/visa" />
             </button>
           </li>
           <li className="">

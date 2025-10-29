@@ -125,6 +125,46 @@ body {
   color: var(--black);
 }
 
+details {
+  border-block-end: 1px solid var(--border);
+  margin-block: 0.5rem;
+  padding-block: 0.5rem;
+  font-weight: 500;
+}
+
+summary {
+  position: relative;
+  anchor-name: --summary;
+  margin: 6 0;
+  &::marker {
+    content: "";
+  }
+
+  &::before,
+  &::after {
+    /* Custom marker dimensions */
+    content: "";
+    border-block-start: 2px solid var(--black);
+    height: 0;
+    width: 0.8rem;
+    inset-block-start: 50%;
+    inset-inline-end: 0;
+    position: absolute;
+    position-anchor: --summary;
+    position-area: top end;
+  }
+
+  /* Rotate just the ::after line to create a "+"" shape */
+  &::after {
+    transform: rotate(90deg);
+    transform-origin: 50%;
+  }
+}
+/* Rotate the line when open */
+details[open] summary::after {
+  transform: rotate(0deg);
+}
+
 /* From Uiverse.io by anand_4957 */
 .loader {
   position: absolute;
@@ -358,9 +398,3 @@ dialog {
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
-
-
-
-
-
-

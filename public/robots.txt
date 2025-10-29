@@ -1,0 +1,9 @@
+# Block all crawlers for /accounts
+User-agent: *
+Disallow: /sign-in
+ 
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+Sitemap: https://jomolhari-vacation.vercel.app/sitemap.xml

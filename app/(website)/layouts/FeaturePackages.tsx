@@ -11,6 +11,7 @@ import jomolhariTrekImage from "@/public/jomolhari trek.png";
 import snowManTrek from "@/public/snowman trek.png";
 import Card from "../components/Card";
 import PrimaryButton from "../ui/PrimaryButton";
+import { packageData } from "../data/packageData";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,18 +60,16 @@ export default function FeaturePackage() {
     >
       <h4 ref={titleRef}>Feature Packages</h4>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 my-5 md:my-10">
-        <Card
-          image={jomolhariTrekImage}
-          title="Jomolhari Trek"
-          subtitle="3D4N | Nu.10,500/-"
-          height="h-40 lg:h-60 xl:h-70"
-        />
-        <Card
-          image={snowManTrek}
-          title="Snowman Trek"
-          subtitle="25D24N | Nu.100,500/-"
-          height="h-40 lg:h-60 xl:h-70"
-        />
+        {packageData?.map((item) => (
+          <Card
+            image={jomolhariTrekImage}
+            title={item?.title}
+            subtitle={`${item?.packageDuration} | ${item?.packageFee}`}
+            height="h-40 lg:h-60 xl:h-70"
+            link={`/treks/${item?.title}`}
+            key={item?.title}
+          />
+        ))}
       </div>
       <div className="">
         <Link href="/treks">

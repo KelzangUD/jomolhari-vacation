@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +22,8 @@ type CardProps = {
   location?: string;
   difficulty?: string;
   desc?: string;
+  details?: string;
+  link?: string;
 };
 
 const Card: React.FC<CardProps> = ({
@@ -34,6 +37,7 @@ const Card: React.FC<CardProps> = ({
   location,
   difficulty,
   desc,
+  link,
 }) => {
   const cardRef = useRef(null);
   useGSAP(
@@ -59,10 +63,7 @@ const Card: React.FC<CardProps> = ({
     { scope: cardRef, revertOnUpdate: true }
   );
   return (
-    <div
-      ref={cardRef}
-      className="relative rounded-2xl overflow-hidden hover:cursor-pointer group"
-    >
+    <div ref={cardRef} className="relative rounded-2xl overflow-hidden group">
       {/* Image wrapper */}
       <div className={`w-full relative ${height}`}>
         <Image
@@ -74,16 +75,20 @@ const Card: React.FC<CardProps> = ({
       </div>
 
       {/* Floating button */}
-      <div className="absolute top-5 right-5 z-50 cursor-pointer">
-        <button className="bg-white text-black rounded-full p-2 shadow-md hover:scale-105 transition-transform duration-200">
-          <Image
-            src="/arrow-up-right.svg"
-            alt="arrow-up-right"
-            width={15}
-            height={15}
-          />
-        </button>
-      </div>
+      {link !== undefined && (
+        <div className="absolute top-5 right-5 z-50">
+          <Link href={link} className="hover:cursor-pointer">
+            <button className="bg-white text-black rounded-full p-2 shadow-md hover:scale-115 transition-transform duration-200 hover:cursor-pointer">
+              <Image
+                src="/arrow-up-right.svg"
+                alt="arrow-up-right"
+                width={15}
+                height={15}
+              />
+            </button>
+          </Link>
+        </div>
+      )}
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-40 z-10" />

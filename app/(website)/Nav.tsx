@@ -4,6 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import NavLink from "./ui/NavLink";
 import PrimaryButton from "./ui/PrimaryButton";
+import logoIcon from "@/public/logo.svg";
+import menuIcon from "@/public/Menu.svg";
+import closeIcon from "@/public/close.svg";
 
 export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
@@ -12,7 +15,7 @@ export default function Nav() {
       <div className="hidden md:flex justify-between items-center w-stretch mx-auto px-10 2xl:px-15 py-3">
         <Link href="/">
           <button className="cursor-pointer transition delay-150 duration-300 ease-in hover:scale-110 pt-1">
-            <Image src="./logo.svg" alt="logo" width={35} height={35} />
+            <Image src={logoIcon} alt="logo" width={35} height={35} />
           </button>
         </Link>
         <div>
@@ -43,7 +46,7 @@ export default function Nav() {
       <div className="flex justify-between items-center md:hidden w-stretch mx-auto px-5 py-3">
         <Link href="/">
           <button className="cursor-pointer transition delay-150 duration-300 ease-in hover:scale-110 pt-1">
-            <Image src="./logo.svg" alt="logo" width={30} height={30} />
+            <Image src={logoIcon} alt="logo" width={30} height={30} />
           </button>
         </Link>
         <button
@@ -51,7 +54,7 @@ export default function Nav() {
           onClick={() => setShowMenu((prev) => !prev)}
         >
           <Image
-            src="./Menu.svg"
+            src={menuIcon}
             alt="menu"
             width={30}
             height={30}
@@ -70,19 +73,14 @@ export default function Nav() {
           <li className="flex justify-between items-center px-2">
             <Link href="/" onClick={() => setShowMenu(false)}>
               <button className="cursor-pointer pt-1">
-                <Image src="./logo.svg" alt="logo" width={30} height={30} />
+                <Image src={logoIcon} alt="logo" width={30} height={30} />
               </button>
             </Link>
             <button
               className="cursor-pointer border border-white rounded"
               onClick={() => setShowMenu(false)}
             >
-              <Image
-                src="./close.svg"
-                alt="close-icon"
-                width={30}
-                height={30}
-              />
+              <Image src={closeIcon} alt="close-icon" width={30} height={30} />
             </button>
           </li>
           <li className="">

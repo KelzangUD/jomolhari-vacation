@@ -1,6 +1,7 @@
 import Image from "next/image";
-import roseIcon from "@/public/rose.svg";
+import flowerIcon from "@/public/flower.svg";
 import documentIcon from "@/public/document.svg";
+import notesIcon from "@/public/notes.svg"
 
 export default function VisaFee() {
   return (
@@ -14,12 +15,12 @@ export default function VisaFee() {
       <ul className="flex flex-col md:flex-row gap-2 md:gap-4 my-6 text-xs md:text-sm">
         <li className="bg-gray-100 p-2 md:p-6 rounded-2xl base-1/2 w-full flex flex-col justify-between">
           <div className="flex gap-4 items-center">
-            <div className="relative h-4 w-4 md:w-6 md:h-6">
+            <div className="relative h-6 w-6 md:w-10 md:h-10 bg-blue-100 rounded-full">
               <Image
-                src={roseIcon}
-                alt="rose"
+                src={flowerIcon}
+                alt="flower"
                 fill
-                className="object-contain"
+                className="object-contain p-2"
               />
             </div>
             <div className="font-semibold text-sm md:text-base">
@@ -37,12 +38,12 @@ export default function VisaFee() {
         </li>
         <li className="bg-gray-100 p-2 md:p-6 rounded-2xl base-1/2 w-full flex flex-col justify-between">
           <div className="flex gap-4 items-center">
-            <div className="relative h-4 w-4 md:w-6 md:h-6">
+            <div className="relative h-6 w-6 md:w-10 md:h-10 bg-blue-100 rounded-full">
               <Image
-                src={documentIcon}
+                src={notesIcon}
                 alt="document"
                 fill
-                className="object-contain"
+                className="object-contain p-2"
               />
             </div>
             <div className="font-semibold text-sm md:text-base">
@@ -62,7 +63,7 @@ export default function VisaFee() {
           href="https://immi.gov.bt/faq/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 items-center text-xs md:text-sm rounded-md cursor-pointer hover:underline hover:text-blue-700 transition ease-in-out duration-150"
+          className="text-blue-600 items-center text-xs md:text-sm rounded-md cursor-pointer underline-offset-5 hover:underline hover:font-semibold transition ease-in-out duration-150"
         >
           For More Info →
         </a>

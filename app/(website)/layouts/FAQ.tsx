@@ -88,7 +88,7 @@ export default function FAQ() {
     { scope: sectionRef }
   );
   return (
-    <div ref={sectionRef} className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-white">
+    <div ref={sectionRef} className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-gray-100">
       <h4 className="fade-in-delayed">Before You Pack Your Bags...</h4>
       <p ref={subtitleRef} className="text-justify my-2 xl:my-4">
         Find everything you need to know before you start your next adventure.

@@ -10,7 +10,7 @@ export default function Assistance() {
       </p>
       <Link
         href="/contact-us"
-        className="flex gap-1 text-xs my-2 md:my-4 md:text-sm rounded-md cursor-pointer text-blue-500 hover:underline hover:text-blue-700 transition ease-in-out duration-150"
+        className="flex gap-1 text-xs my-2 md:my-4 md:text-sm rounded-md cursor-pointer text-blue-600 underline-offset-5 hover:underline hover:font-semibold hover:text-blue-700 transition ease-in-out duration-150"
       >
         Contact Us →
       </Link>

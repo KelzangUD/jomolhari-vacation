@@ -19,8 +19,8 @@ export default function Nav() {
           </button>
         </Link>
         <div>
-          <ul className="flex gap-5 items-center">
-            <li className="flex-grow">
+          <ul className="flex gap-15 items-center">
+            <li className="flex-grow group-hover:text-primary">
               <NavLink routeName="About Us" href="/about-us" />
             </li>
             <li className="flex-grow">

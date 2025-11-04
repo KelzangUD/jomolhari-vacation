@@ -7,7 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Link from "next/link";
 import arrowRightIcon from "@/public/arrow-right.svg";
-import jomolhariTrekImage from "@/public/jomolhari-trek.png";
 import Card from "../components/Card";
 import PrimaryButton from "../ui/PrimaryButton";
 import { packageData } from "../data/packageData";
@@ -58,6 +57,9 @@ export default function FeaturePackage() {
       className="z-10 p-5 md:p-10 xl:p-15 2xl:py-20 2xl:px-20 bg-white"
     >
       <h4 ref={titleRef}>Feature Packages</h4>
+      <p ref={subtitleRef} className="my-2 lg:my-4">
+        Discover our top travel experiences designed for every explorer.
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 my-5 md:my-10">
         {packageData?.map((item) => (
           <Card

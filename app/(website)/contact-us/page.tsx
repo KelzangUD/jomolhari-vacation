@@ -48,7 +48,7 @@ export default function Contact() {
           whatsapp
         </p>
         <div className="flex items-center gap-2 xl:gap-10 my-4 xl:my-10">
-          <span className="p-2 xl:p-4 rounded-md bg-[#d9d9d9]">
+          <span className="p-2 xl:p-4 rounded-md bg-blue-100">
             <div className="relative w-4 h-4 2xl:w-6 2xl:h-6">
               <Image
                 src="/phone.svg"

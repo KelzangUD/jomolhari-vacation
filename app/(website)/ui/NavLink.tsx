@@ -9,7 +9,7 @@ const NavLink: React.FC<NavLinkProps> = ({ routeName, href }) => {
   return (
     <Link
       href={href}
-      className="nav-link relative overflow-hidden p-2 text-white text-left cursor-pointer md:text-center block"
+      className="nav-link relative overflow-hidden py-2 text-gray-100 text-left cursor-pointer md:text-center"
     >
       {routeName}
     </Link>

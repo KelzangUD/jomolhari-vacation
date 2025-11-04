@@ -6,13 +6,13 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 // import { SafeHtmlRenderer } from "../../components/SafeHtmlRenderer";
 import { packageData } from "../../data/packageData";
+import TrekOverview from "./components/TrekOverview";
+import ItineraryOverview from "./components/ItineraryOverview";
 
 type itineraryOverviewProps = {
   day: number;
   place: string;
-  distance: string;
-  duration: string;
-  altitude: string;
+  description: string;
   keyActivity: string;
 };
 
@@ -48,6 +48,9 @@ interface PackageItem {
   title: string;
   trekOverview: string;
   image: StaticImageData;
+  packageDuration: string;
+  difficulty: string;
+  groupSize: string;
   itineraryOverview?: itineraryOverviewProps[];
   packagePricing?: PackagePricingProps;
   inclusive?: inclusiveProps;
@@ -76,12 +79,14 @@ export default function Trek() {
 
   return (
     <div className="z-10 p-5 md:p-10 xl:p-25 bg-white">
-      <h4 className="mt-10 text-center">{contain?.title}</h4>
-      <div className="flex justify-between gap-6 my-10">
-        <div className="">
-          <h6 className="text-left ">Trek Overview</h6>
-          <p className="my-2 text-xl">{contain?.trekOverview}</p>
-        </div>
+      <h4 className="mt-15 md:mt-10">{contain?.title}</h4>
+      <div className="flex flex-col-reverse md:flex-row md:justify-between gap-6 my-4 md:my-10">
+        <TrekOverview
+          trekOverview={contain?.trekOverview}
+          days={contain?.packageDuration}
+          difficulty={contain?.difficulty}
+          groupSize={contain?.groupSize}
+        />
         <div className="relative w-full h-70 align-right rounded-2xl overflow-hidden shadow">
           <Image
             src={contain?.image}
@@ -91,33 +96,7 @@ export default function Trek() {
           />
         </div>
       </div>
-
-      {contain?.itineraryOverview !== undefined &&
-        contain?.itineraryOverview?.length > 0 && (
-          <div className="my-4">
-            <h6>Itinerary Overview</h6>
-            <ul className="flex flex-col gap-2 my-2">
-              {contain?.itineraryOverview?.map((item) => (
-                <li key={item?.keyActivity} className="flex gap-1 text-justify">
-                  <span className="font-semibold w-15">Day {item?.day}:</span>
-                  <span className="flex flex-col">
-                    <span>{item?.place}</span>
-                    {item?.distance !== "" && (
-                      <span>Distance: {item?.distance}</span>
-                    )}
-                    {item?.duration !== "" && (
-                      <span>Duration: {item?.duration}</span>
-                    )}
-                    {item?.altitude !== "" && (
-                      <span>Altitude: {item?.altitude}</span>
-                    )}
-                    <span>{item?.keyActivity}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+      <ItineraryOverview itineraryOverview={contain?.itineraryOverview} />
       <div className="my-4">
         <h6>Package Pricing</h6>
         <p className="my-2 text-base">*{contain?.packagePricing?.header}</p>

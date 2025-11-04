@@ -1,5 +1,7 @@
 "use client";
 
+import Image, { StaticImageData } from "next/image";
+
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 // import { SafeHtmlRenderer } from "../../components/SafeHtmlRenderer";
@@ -45,6 +47,7 @@ type bookingProps = {
 interface PackageItem {
   title: string;
   trekOverview: string;
+  image: StaticImageData;
   itineraryOverview?: itineraryOverviewProps[];
   packagePricing?: PackagePricingProps;
   inclusive?: inclusiveProps;
@@ -73,11 +76,22 @@ export default function Trek() {
 
   return (
     <div className="z-10 p-5 md:p-10 xl:p-25 bg-white">
-      <h4>{contain?.title}</h4>
-      <div className="my-4">
-        <h6>Trek Overview</h6>
-        <p className="my-2">{contain?.trekOverview}</p>
+      <h4 className="mt-10 text-center">{contain?.title}</h4>
+      <div className="flex justify-between gap-6 my-10">
+        <div className="">
+          <h6 className="text-left ">Trek Overview</h6>
+          <p className="my-2 text-xl">{contain?.trekOverview}</p>
+        </div>
+        <div className="relative w-full h-70 align-right rounded-2xl overflow-hidden shadow">
+          <Image
+            src={contain?.image}
+            alt={contain?.title}
+            fill
+            className="object-cover"
+          />
+        </div>
       </div>
+
       {contain?.itineraryOverview !== undefined &&
         contain?.itineraryOverview?.length > 0 && (
           <div className="my-4">
@@ -170,27 +184,45 @@ export default function Trek() {
           </li>
         </ul>
       </div>
-      <div>
+      <div className="my-4">
         <h6>Excluded</h6>
         <ul className="my-2 flex flex-col gap-2">
           {contain?.exclusive?.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item}>
+              <span className="font-semibold">{item.split(":")[0]}</span>
+              {item?.split(":")[1]}{" "}
+            </li>
           ))}
         </ul>
       </div>
-      <div>
+      <div className="my-4">
         <h6>Terms And Conditions</h6>
-        <p>Booking and Payment</p>
+        <p className="text-base my-2 font-semibold">Booking and Payment</p>
         <ul>
-          <li>Deposit: {contain?.booking?.deposit}</li>
-          <li>Balance: {contain?.booking?.balance}</li>
-          <li>Payment Method: {contain?.booking?.paymentMethod}</li>
-          <li>Note: {contain?.booking?.note}</li>
+          <li className="my-1">
+            <span className="font-semibold">Deposit:</span>{" "}
+            {contain?.booking?.deposit}
+          </li>
+          <li className="my-1">
+            <span className="font-semibold">Balance:</span>{" "}
+            {contain?.booking?.balance}
+          </li>
+          <li className="my-1">
+            <span className="font-semibold">Payment Method:</span>{" "}
+            {contain?.booking?.paymentMethod}
+          </li>
+          <li className="my-1">
+            <span className="font-semibold">Note:</span>{" "}
+            {contain?.booking?.note}
+          </li>
         </ul>
-        <p>Cancellation Policy</p>
+        <p className="text-base my-2 font-semibold">Cancellation Policy</p>
         <ul>
           {contain?.cancellationPolicy?.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item} className="my-1">
+              <span className="font-semibold">{item?.split(":")[0]}:</span>{" "}
+              {item?.split(":")[1]}
+            </li>
           ))}
         </ul>
       </div>

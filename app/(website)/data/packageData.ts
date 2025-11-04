@@ -1,8 +1,11 @@
+import JomolhariTrekImage from "@/public/jomolhari-trek.png";
+
 export const packageData = [
   {
     title: "Jomolhari Festival Trek",
     packageDuration: "5D4N",
     packageFee: "Nu. 41,000/-",
+    image: JomolhariTrekImage,
     trekOverview:
       "This is a 5-day trekking package for a group of 3 people that includes the opportunity to rest and enjoy the Jomolhari Snow Leopard Festival on Day 3. The itinerary follows a route along the Paro Chu River and reaches high altitudes, culminating in superb views of Mounts Jomolhari and Jichudrakey.",
     itineraryOverview: [

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import jomolhariTrekImage from "@/public/jomolhari trek.png";
+import jomolhariTrekImage from "@/public/jomolhari-trek.png";
 import snowManTrekImage from "@/public/snow-man-trek.jpg";
 import drukPathTrekImage from "@/public/druk-path-trek.jpg";
 import dagalaTrekImage from "@/public/dagala-trek.jpg";

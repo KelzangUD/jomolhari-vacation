@@ -7,8 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Link from "next/link";
 import arrowRightIcon from "@/public/arrow-right.svg";
-import jomolhariTrekImage from "@/public/jomolhari trek.png";
-import snowManTrek from "@/public/snowman trek.png";
+import jomolhariTrekImage from "@/public/jomolhari-trek.png";
 import Card from "../components/Card";
 import PrimaryButton from "../ui/PrimaryButton";
 import { packageData } from "../data/packageData";
@@ -62,7 +61,7 @@ export default function FeaturePackage() {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 my-5 md:my-10">
         {packageData?.map((item) => (
           <Card
-            image={jomolhariTrekImage}
+            image={item?.image}
             title={item?.title}
             subtitle={`${item?.packageDuration} | ${item?.packageFee}`}
             height="h-40 lg:h-60 xl:h-70"

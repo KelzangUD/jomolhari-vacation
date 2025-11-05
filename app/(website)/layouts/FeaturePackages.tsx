@@ -66,7 +66,7 @@ export default function FeaturePackage() {
             image={item?.image}
             title={item?.title}
             subtitle={`${item?.packageDuration} | ${item?.packageFee}`}
-            height="h-40 lg:h-60 xl:h-70"
+            height="h-50 lg:h-60 xl:h-70"
             link={`/treks/${item?.title}`}
             key={item?.title}
           />

@@ -20,7 +20,7 @@ export default function VisaFee() {
                 src={flowerIcon}
                 alt="flower"
                 fill
-                className="object-contain p-2"
+                className="object-contain p-1 md:p-2"
               />
             </div>
             <div className="font-semibold text-sm md:text-base">
@@ -43,7 +43,7 @@ export default function VisaFee() {
                 src={notesIcon}
                 alt="document"
                 fill
-                className="object-contain p-2"
+                className="object-contain p-1 md:p-2"
               />
             </div>
             <div className="font-semibold text-sm md:text-base">

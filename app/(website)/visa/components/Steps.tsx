@@ -9,8 +9,8 @@ const ListItem = ({
 }) => {
   return (
     <li className="flex gap-6">
-      <div className="items-center">
-        <p className="px-3 rounded-full bg-blue-100 text-primary text-sm font-semibold">
+      <div className="flex items-center justify-center">
+        <p className="flex items-center justify-center w-5 h-5 md:w-8 md:h-8 rounded-full bg-blue-100 text-primary text-xs md:text-sm font-semibold">
           {index}
         </p>
       </div>

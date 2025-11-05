@@ -2,31 +2,27 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-
 import CursorFollower from "./components/CursorFollower";
 import Container from "./ui/container";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import Loader from "./ui/Loader";
 
-export default function RootLayout({
+export default function ClientLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const [isLoading, setIsLoading] = useState(true);
-  const pathname = usePathname(); // ✅ Detect route changes
+  const pathname = usePathname();
 
   useEffect(() => {
-    // Trigger loader whenever route changes
     setIsLoading(true);
-
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 300);
-
+    }, 400);
     return () => clearTimeout(timer);
-  }, [pathname]); // ✅ Runs on every route change
+  }, [pathname]);
 
   return (
     <>
@@ -35,10 +31,13 @@ export default function RootLayout({
       ) : (
         <>
           <Nav />
-          <Container>
-            {children}
-            <Footer />
-          </Container>
+          <main>
+            <Container>
+              {children}
+              <Footer />
+            </Container>
+          </main>
+
           <CursorFollower />
         </>
       )}

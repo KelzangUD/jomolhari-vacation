@@ -17,10 +17,10 @@ export default function TrekOverview({
   groupSize,
 }: TrekOverViewProps) {
   return (
-    <div>
+    <section>
       <h6 className="text-base md:text-2xl">Trek Overview</h6>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-4">
-        <div className="flex flex-col justify-between gap-4 items-center text-center p-4 shadow-xs bg-background rounded-2xl">
+      <div className="grid grid-cols-3 gap-2 md:gap-6 my-4">
+        <div className="flex flex-col justify-between gap-4 items-center text-center p-4 shadow-xs bg-background rounded-md md:rounded-2xl">
           <span className="relative w-12 h-12 bg-blue-100 rounded-full">
             <Image
               src={clockIcon}
@@ -34,7 +34,7 @@ export default function TrekOverview({
             <p className="text-secondary text-xs md:text-sm md:-mt-2">{days}</p>
           </span>
         </div>
-        <div className="flex flex-col justify-between gap-4 items-center text-center p-4 shadow-xs bg-background rounded-2xl">
+        <div className="flex flex-col justify-between gap-4 items-center text-center p-4 shadow-xs bg-background rounded-md md:rounded-2xl">
           <span className="relative w-12 h-12 bg-blue-100 rounded-full">
             <Image
               src={triangleIcon}
@@ -50,7 +50,7 @@ export default function TrekOverview({
             </p>
           </span>
         </div>
-        <div className="flex flex-col justify-between gap-4 items-center text-center p-4 shadow-xs bg-background rounded-2xl">
+        <div className="flex flex-col justify-between gap-4 items-center text-center p-4 shadow-xs bg-background rounded-md md:rounded-2xl">
           <span className="relative w-12 h-12 bg-blue-100 rounded-full">
             <Image
               src={userIcon}
@@ -70,6 +70,6 @@ export default function TrekOverview({
       <p className="my-2 text-xs md:text-base text-justify leading-6 text-secondary">
         {trekOverview}
       </p>
-    </div>
+    </section>
   );
 }

@@ -16,9 +16,9 @@ export default function PackagePricing({
   pricingPerHead,
 }: PackagePricingProps) {
   return (
-    <div className="md:my-10">
+    <div className="my-4 md:my-10">
       <h6 className="text-base md:text-2xl">Package Pricing</h6>
-      <div className="p-8 bg-gray-50 shadow text-center my-8 rounded-2xl w-80">
+      <div className="p-8 bg-gray-50 shadow text-center my-4 md:my-8 rounded-md md:rounded-2xl w-80">
         <span>
           <p className="text-secondary text-xs md:text-sm">
             Standard Package Pricing
@@ -57,7 +57,7 @@ export default function PackagePricing({
         </span>
         <hr className="border-0.1 border-bottom border-gray-200 my-4" />
         <button
-          className={`bg-primary py-2 px-4 rounded-full overflow-hidden cursor-pointer text-sm lg:text-base text-white hover:bg-blue-700`}
+          className={`bg-primary py-2 px-4 rounded-full overflow-hidden cursor-pointer text-xs lg:text-base text-white hover:bg-blue-700`}
         >
           Book This Package
         </button>

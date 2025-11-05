@@ -36,7 +36,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   review,
 }) => {
   return (
-    <section className="rounded-2xl border border-border flex flex-col justify-between p-2 md:p-4 lg:p-6">
+    <section className="rounded-md md:rounded-2xl border border-border flex flex-col justify-between p-4 lg:p-6">
       <div>
         <div className="relative w-5 h-5 lg:w-7 lg:h-7 2xl:w-10 2xl:h-10">
           <Image

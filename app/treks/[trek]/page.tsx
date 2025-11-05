@@ -84,14 +84,14 @@ export default function Trek() {
   return (
     <div className="z-10 p-5 md:p-10 xl:p-25 bg-white">
       <h4 className="mt-15 md:mt-10">{contain?.title}</h4>
-      <div className="flex flex-col-reverse md:flex-row md:justify-between gap-6 my-4 md:my-10">
+      <div className="flex flex-col md:flex-row md:justify-between gap-6 my-4 md:my-10">
         <TrekOverview
           trekOverview={contain?.trekOverview}
           days={contain?.packageDuration}
           difficulty={contain?.difficulty}
           groupSize={contain?.groupSize}
         />
-        <div className="relative w-full h-70 align-right rounded-2xl overflow-hidden shadow">
+        <div className="relative w-full h-70 align-right rounded-md md:rounded-2xl overflow-hidden shadow">
           <Image
             src={contain?.image}
             alt={contain?.title}

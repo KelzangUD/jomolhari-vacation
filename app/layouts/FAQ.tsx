@@ -74,7 +74,7 @@ export default function FAQ() {
         {faqData?.map((item, index) => (
           <details
             key={item?.question}
-            className="p-8 rounded-md shadow-none bg-background"
+            className="p-4 md:p-8 rounded-md shadow-none bg-background"
           >
             <summary className="text-sm md:text-base lg:text-xl xl:text-xl list-none">
               {index + 1}. {item?.question}

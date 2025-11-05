@@ -45,7 +45,7 @@ const Card: React.FC<CardProps> = ({ image, title, desc }) => {
   return (
     <div
       ref={cardRef}
-      className="border border-border rounded-2xl p-3 lg:p-4 xl:p-6 2xl:p-8 text-justify"
+      className="border border-border rounded-md md:rounded-2xl p-3 lg:p-4 xl:p-6 2xl:p-8 text-justify"
     >
       <div className="relative w-4 h-4 lg:w-6 lg:h-6 xl:w-10 xl:h-10">
         <Image

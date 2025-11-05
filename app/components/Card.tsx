@@ -67,7 +67,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <button
       ref={cardRef}
-      className="relative rounded-2xl overflow-hidden group hover:cursor-pointer"
+      className="relative rounded-md md:rounded-2xl overflow-hidden group hover:cursor-pointer"
       onClick={() => {
         link ? router.push(link) : null;
       }}

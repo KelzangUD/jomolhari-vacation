@@ -11,7 +11,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ image, title, desc }) => {
   return (
-    <div className="border border-border rounded-2xl p-4 xl:p-8 bg-white">
+    <div className="border border-border rounded-md md:rounded-2xl p-4 xl:p-8 bg-white">
       <div className="relative w-5 h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7">
         <Image
           src={image}

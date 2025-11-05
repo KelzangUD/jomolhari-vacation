@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ReactOut() {
   return (
-    <div className="relative bg-cover bg-center bg-[url('/contact.png')] w-full h-50 md:h-60 lg:h-70 xl:h-78 2xl:h-80 text-black p-5 md:p-10 xl:px-15 2xl:px-20">
+    <section className="relative bg-cover bg-center bg-[url('/contact.png')] w-full h-50 md:h-60 lg:h-70 xl:h-78 2xl:h-80 text-black p-5 md:p-10 xl:px-15 2xl:px-20">
       <div className="absolute inset-0 bg-white opacity-85 z-5" />
       <div className="absolute z-10 flex flex-col justify-center gap-3 md:gap-4 xl:gap-6">
         <h4>
@@ -20,6 +20,6 @@ export default function ReactOut() {
           </button>
         </Link>
       </div>
-    </div>
+    </section>
   );
 }

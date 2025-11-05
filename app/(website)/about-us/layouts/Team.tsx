@@ -35,7 +35,7 @@ export default function Team() {
     <div className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-gray-100">
       <h4>Team</h4>
       <p className="my-2 xl:my-4 text-justify">
-        At <span className="font-semibold">Jomolhari Vacation</span>, our
+        At <b className="font-semibold">Jomolhari Vacation</b>, our
         passionate team is dedicated to exceptional service. Led by Mr. Sonam
         Rinchen, we have experienced guides, travel planners, and customer
         service experts who bring unique skills to make every Bhutan adventure

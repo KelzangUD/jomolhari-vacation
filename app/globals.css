@@ -22,6 +22,9 @@
 }
 
 @layer base {
+  b {
+    @apply font-semibold;
+  }
   h2 {
     /* Default (mobile-first) styles */
     @apply text-xl font-bold;

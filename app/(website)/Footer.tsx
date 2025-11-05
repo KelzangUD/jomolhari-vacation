@@ -8,7 +8,7 @@ export default function Footer() {
           <h4>Jomolhari Vacation</h4>
           <p className="my-4 text-sm 2xl:text-lg">
             More than just travel-we craft experiences{" "}
-            <span className="font-extrabold">beyond reach</span>. Whether you
+            <b className="font-extrabold">beyond reach</b>. Whether you
             seek calm snowy retreats or vibrant mountain views, your next
             unforgettable adventure begins here.
           </p>

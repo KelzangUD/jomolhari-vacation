@@ -27,7 +27,7 @@ export default function Blogs() {
     <div className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-white">
       <h4 className="mt-15">Blog</h4>
       <p className="my-2 xl:my-4">
-        <span className="font-bold">Beyond reach</span>-experiences that inspire
+        <b>Beyond reach</b>-experiences that inspire
         your next adventure.
       </p>
       <div className="relative">
@@ -49,7 +49,7 @@ export default function Blogs() {
             image={blog?.image}
             title={blog?.title}
             desc={blog?.desc}
-            height="h-50 md:h-70 xl:h-90 2xl:h-110"
+            height="h-50 md:h-70 xl:h-90 2xl:h-100"
             date={blog?.date}
             author={blog?.author}
             role={blog?.role}

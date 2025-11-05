@@ -53,7 +53,7 @@ export default function UpcomingEvents() {
   return (
     <>
       {data?.length > 0 && (
-        <div
+        <section
           ref={sectionRef}
           className="p-5 pb-10 md:pb-15 xl:pb-20 2xl:pb-25 md:p-10 xl:p-15 2xl:p-20 bg-gray-100"
         >
@@ -73,7 +73,7 @@ export default function UpcomingEvents() {
               />
             ))}
           </div>
-        </div>
+        </section>
       )}
     </>
   );

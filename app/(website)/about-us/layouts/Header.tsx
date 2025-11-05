@@ -52,7 +52,7 @@ export default function Header() {
   );
 
   return (
-    <div ref={sectionRef} className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-white">
+    <section ref={sectionRef} className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-white">
       <div className="flex flex-col justify-center h-[inherit] gap-6 xl:gap-8 mt-15">
         <h1
           ref={titleRef}
@@ -74,11 +74,11 @@ export default function Header() {
           className="2xl:text-2xl xl:leading-8 2xl:leading-9 tracking-wide text-justify"
         >
           From alpine meadows to nomadic camps,
-          <span className="font-bold">Jomolhari Vacation</span> brings you
-          closer to <span className="font-bold">Bhutan’s</span> wild beauty with
+          <b>Jomolhari Vacation</b> brings you
+          closer to <b>Bhutan’s</b> wild beauty with
           expert guides and seamless planning.
         </p>
       </div>
-    </div>
+    </section>
   );
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Assistance() {
   return (
-    <div className="p-4 md:p-6 xl:p-8 bg-white rounded-2xl shadow">
+    <section className="p-4 md:p-6 xl:p-8 bg-white rounded-md md:rounded-2xl shadow">
       <h6 className="font-semibold">Need Assistance?</h6>
       <p className="text-xs md:text-base leading-6 mt-4 text-secondary">
         If you have any questions or need help with your visa application,
@@ -14,6 +14,6 @@ export default function Assistance() {
       >
         Contact Us →
       </Link>
-    </div>
+    </section>
   );
 }

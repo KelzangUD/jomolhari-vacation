@@ -5,7 +5,7 @@ import notesIcon from "@/public/notes.svg"
 
 export default function VisaFee() {
   return (
-    <div className="p-4 md:p-6 xl:p-8 bg-white rounded-2xl shadow">
+    <section className="p-4 md:p-6 xl:p-8 bg-white rounded-md md:rounded-2xl shadow">
       <h6 className="font-semibold">
         Visa Fees & Sustainable Development Fee (SDF)
       </h6>
@@ -13,7 +13,7 @@ export default function VisaFee() {
         As part of the visa application process, travelers must pay:
       </p>
       <ul className="flex flex-col md:flex-row gap-2 md:gap-4 my-6 text-xs md:text-sm">
-        <li className="bg-gray-100 p-2 md:p-6 rounded-2xl base-1/2 w-full flex flex-col justify-between">
+        <li className="bg-gray-100 p-2 md:p-6 rounded-md md:rounded-2xl base-1/2 w-full flex flex-col justify-between">
           <div className="flex gap-4 items-center">
             <div className="relative h-6 w-6 md:w-10 md:h-10 bg-blue-100 rounded-full">
               <Image
@@ -36,7 +36,7 @@ export default function VisaFee() {
             </span>
           </p>
         </li>
-        <li className="bg-gray-100 p-2 md:p-6 rounded-2xl base-1/2 w-full flex flex-col justify-between">
+        <li className="bg-gray-100 p-2 md:p-6 rounded-md md:rounded-2xl base-1/2 w-full flex flex-col justify-between">
           <div className="flex gap-4 items-center">
             <div className="relative h-6 w-6 md:w-10 md:h-10 bg-blue-100 rounded-full">
               <Image
@@ -68,6 +68,6 @@ export default function VisaFee() {
           For More Info →
         </a>
       </div>
-    </div>
+    </section>
   );
 }

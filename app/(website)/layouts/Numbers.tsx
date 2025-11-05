@@ -51,12 +51,12 @@ const NumberCard: React.FC<NumberCardProps> = ({ icon, title, number }) => {
     >
       <div className="text-black">
         <p className="my-1 md:my-2">{title}</p>
-        <span
+        <b
           ref={numberRef}
           className="font-bold ml:font-extrabold ml:text-xl xl:text-3xl"
         >
           {number}
-        </span>
+        </b>
       </div>
       <div className="relative w-6 h-6 xl:w-10 xl:h-10">
         <Image
@@ -109,7 +109,7 @@ export default function Numbers() {
     { scope: sectionRef, revertOnUpdate: true }
   );
   return (
-    <div
+    <section
       ref={sectionRef}
       className="p-5 md:p-10 xl:x-15 2xl:p-20 bg-black text-white"
     >
@@ -130,6 +130,6 @@ export default function Numbers() {
           number={1000}
         />
       </div>
-    </div>
+    </section>
   );
 }

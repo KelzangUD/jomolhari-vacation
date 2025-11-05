@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({ image, title, desc }) => {
 
 export default function Values() {
   return (
-    <div className="p-5 md:p-10 xl:px-15 2xl:p-20 bg-white">
+    <section className="p-5 md:p-10 xl:px-15 2xl:p-20 bg-white">
       <h4>Values</h4>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-6 my-2 md:my-5">
         <Card
@@ -47,6 +47,6 @@ export default function Values() {
           desc="We work closely with local communities to support their livelihoods and preserve their heritage."
         />
       </div>
-    </div>
+    </section>
   );
 }

@@ -52,7 +52,7 @@ export default function FeaturePackage() {
     { scope: sectionRef, revertOnUpdate: true }
   );
   return (
-    <div
+    <section
       ref={sectionRef}
       className="z-10 p-5 md:p-10 xl:p-15 2xl:py-20 2xl:px-20 bg-white"
     >
@@ -81,6 +81,6 @@ export default function FeaturePackage() {
           />
         </Link>
       </div>
-    </div>
+    </section>
   );
 }

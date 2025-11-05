@@ -26,7 +26,7 @@ const ListItem = ({
 
 export default function Apply() {
   return (
-    <div className="p-4 md:p-6 xl:p-8 bg-white rounded-2xl shadow">
+    <section className="p-4 md:p-6 xl:p-8 bg-white rounded-md md:rounded-2xl shadow">
       <h6 className="font-semibold">What You’ll Need to Apply</h6>
       <p className="text-xs md:text-base text-secondary">
         To apply for a visa online, please prepare:
@@ -49,10 +49,10 @@ export default function Apply() {
         />
         <ListItem icon={cardIcon} alt="card" desc="Payment details" />
       </ul>
-      <p className="my-2 text-xs md:text-sm italic leading-6 text-secondary">
+      <i className="text-xs md:text-sm text-secondary text-justify leading-4">
         (Tip: Inform your bank about the international transfer to Bhutan to
         avoid delays.)
-      </p>
+      </i>
       <div className="mt-6">
         {" "}
         <a
@@ -65,6 +65,6 @@ export default function Apply() {
           Apply for Visa{" "}
         </a>{" "}
       </div>
-    </div>
+    </section>
   );
 }

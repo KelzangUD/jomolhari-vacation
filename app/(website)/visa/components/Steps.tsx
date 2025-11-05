@@ -15,7 +15,7 @@ const ListItem = ({
         </p>
       </div>
       <div>
-        <span className="font-semibold gap-2 block">{title}</span>
+        <b className="gap-2 block">{title}</b>
         <span className="text-secondary">{subtitle}</span>
       </div>
     </li>
@@ -24,7 +24,7 @@ const ListItem = ({
 
 export default function Steps() {
   return (
-    <div className="p-4 md:p-6 xl:p-8 bg-white rounded-2xl shadow">
+    <section className="p-4 md:p-6 xl:p-8 bg-white rounded-md md:rounded-2xl shadow">
       <h6 className="font-semibold">Steps to Apply for a Visa</h6>
       <p className="text-xs md:text-base">
         Follow these simple steps to complete your application:
@@ -60,8 +60,8 @@ export default function Steps() {
       </ul>
       <p className="text-xs md:text-sm my-4 bg-gray-100 p-2 rounded-md">
         Once submitted, your visa will be reviewed within
-        <span className="font-semibold"> five working days</span>.
+        <b> five working days</b>.
       </p>
-    </div>
+    </section>
   );
 }

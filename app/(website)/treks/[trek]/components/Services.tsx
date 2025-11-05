@@ -28,10 +28,10 @@ const ListItem = ({
       <div className="absolute w-4 h-4 mt-2">
         <Image src={icon} alt={main} fill className="object-contain" />
       </div>
-      <div className="ml-10">
-        <p className="font-semibold text-base">
+      <div className="ml-8 md:ml-10">
+        <p className="font-semibold text-sm md:text-base">
           {main}:{" "}
-          <span className="text-secondary text-base text-justify font-normal">
+          <span className="text-secondary text-sm md:text-base text-justify font-normal">
             {sub}
           </span>
         </p>
@@ -48,7 +48,7 @@ export default function Services({
   exclusive?: string[];
 }) {
   return (
-    <div className="my-8 grid grid-cols-2 gap-8">
+    <div className="my-8 grid md:grid-cols-2 gap-8">
       <div>
         <h6 className="text-base md:text-2xl">What is Included ?</h6>
         <ul className="my-4 flex flex-col gap-2">

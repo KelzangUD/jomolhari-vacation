@@ -37,7 +37,6 @@ export default function ClientLayout({
               <Footer />
             </Container>
           </main>
-
           <CursorFollower />
         </>
       )}

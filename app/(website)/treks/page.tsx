@@ -1,36 +1,6 @@
 import Image from "next/image";
-import jomolhariTrekImage from "@/public/jomolhari-trek.png";
-import snowManTrekImage from "@/public/snow-man-trek.jpg";
-import drukPathTrekImage from "@/public/druk-path-trek.jpg";
-import dagalaTrekImage from "@/public/dagala-trek.jpg";
 import Card from "../components/Card";
-
-const trailsData = [
-  {
-    image: jomolhariTrekImage,
-    title: "Jomolhari Trek",
-    subtitle: "4D3N | Nu.10,500/-",
-    difficulty: "Moderate",
-  },
-  {
-    image: snowManTrekImage,
-    title: "Snowman Trek",
-    subtitle: "25D24N | Nu.100,500/-",
-    difficulty: "Challenging",
-  },
-  {
-    image: drukPathTrekImage,
-    title: "Druk Path Trek",
-    subtitle: "6D5N | Nu.20,500/-",
-    difficulty: "Moderate",
-  },
-  {
-    image: dagalaTrekImage,
-    title: "Dagala Trek",
-    subtitle: "6D5N | Nu.10,500/-",
-    difficulty: "Moderate",
-  },
-];
+import { packageData } from "../data/packageData";
 
 export default function Trails() {
   return (
@@ -54,14 +24,14 @@ export default function Trails() {
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 xl:gap-6 my-6">
-        {trailsData.map((trail) => (
+        {packageData?.map((item) => (
           <Card
-            image={trail?.image}
-            title={trail?.title}
-            subtitle={trail?.subtitle}
-            height="h-50 md:h-70 xl:h-80 2xl:h-100"
-            difficulty={trail?.difficulty}
-            key={trail?.title}
+            image={item?.image}
+            title={item?.title}
+            subtitle={`${item?.packageDuration} | ${item?.packageFee}`}
+            height="h-50 lg:h-70 xl:h-90"
+            link={`/treks/${item?.title}`}
+            key={item?.title}
           />
         ))}
       </div>

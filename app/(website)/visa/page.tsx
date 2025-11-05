@@ -10,7 +10,7 @@ export default function Visa() {
     <div className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-cover bg-top bg-gray-100 bg-[url('/map.svg')] bg-blend-overlay">
       <h4 className="mt-15">Bhutan Visa Information</h4>
       <p className="my-2 text-xs md:text-base">
-        Your complete guide to visa applications,required documents, and entry
+        Your complete guide to visa applications, required documents, and entry
         requirements for your unforgettable journey to Bhutan.
       </p>
       <div className="grid md:grid-cols-6 gap-8 mt-8">

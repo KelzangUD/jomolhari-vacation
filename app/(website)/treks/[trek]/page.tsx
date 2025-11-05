@@ -8,6 +8,10 @@ import { useEffect, useState } from "react";
 import { packageData } from "../../data/packageData";
 import TrekOverview from "./components/TrekOverview";
 import ItineraryOverview from "./components/ItineraryOverview";
+import PackagePricing from "./components/PackagePricing";
+import Services from "./components/Services";
+import TermsAndCondition from "./components/TermsAndCondition";
+import phoneIcon from "@/public/phone.svg";
 
 type itineraryOverviewProps = {
   day: number;
@@ -97,113 +101,33 @@ export default function Trek() {
         </div>
       </div>
       <ItineraryOverview itineraryOverview={contain?.itineraryOverview} />
-      <div className="my-4">
-        <h6>Package Pricing</h6>
-        <p className="my-2 text-base">*{contain?.packagePricing?.header}</p>
-        <table className="border border-border w-full">
-          <thead className="">
-            <tr className="border border-border bg-black text-white">
-              <th className="p-2 text-left">Item</th>
-              <th className="p-2 text-left">No. of Pax</th>
-              <th className="p-2 text-left">Total Amount (Nu)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {contain?.packagePricing?.tableContain?.map((item) => (
-              <tr key={item?.item}>
-                <td className="p-2 text-left border border-border">
-                  {item?.item}
-                </td>
-                <td className="p-2 text-left border border-border">
-                  {item?.noOfPeople}
-                </td>
-                <td className="p-2 text-left border border-border">
-                  {item?.amount}
-                </td>
-              </tr>
-            ))}
-            <tr className="bg-gray-100">
-              <td className="p-2 text-left font-semibold"></td>
-              <td className="p-2 text-left"></td>
-              <td className="p-2 text-left font-semibold">
-                Gross Total:{" "}
-                {contain?.packagePricing?.tableContain?.reduce((acc, curr) => {
-                  return acc + curr?.amount;
-                }, 0)}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <p className="text-sm my-2">
-          *Pricing Per Head : {contain?.packagePricing?.pricingPerHead}
+      <PackagePricing
+        header={contain?.packagePricing?.header}
+        tableContain={contain?.packagePricing?.tableContain}
+        pricingPerHead={contain?.packagePricing?.pricingPerHead}
+      />
+      <Services inclusive={contain?.inclusive} exclusive={contain?.exclusive} />
+      <TermsAndCondition />
+      <div className="my-8 xl:mt-10">
+        <h6 className="my-1">Direct Contact</h6>
+        <p className="text-sm md:text-xl">
+          For any inquires, you can reach us directly via phone or whatsapp.
         </p>
-      </div>
-      <div className="my-4">
-        <h6>Inclusive (Provided Services)</h6>
-        <ul className="my-2 flex flex-col gap-2">
-          <li>
-            <span className="font-semibold">Support & Staff:</span>{" "}
-            {contain?.inclusive?.supportAndStaff}
-          </li>
-          <li>
-            <span className="font-semibold">Logistics:</span>{" "}
-            {contain?.inclusive?.logistics}
-          </li>
-          <li>
-            <span className="font-semibold">Accommodation And Meals:</span>
-            {contain?.inclusive?.accommodationAndMeals}
-          </li>
-          <li>
-            <span className="font-semibold">Equipment:</span>
-            {contain?.inclusive?.equipment}
-          </li>
-          <li>
-            <span className="font-semibold">Other:</span>{" "}
-            {contain?.inclusive?.Other}
-          </li>
-        </ul>
-      </div>
-      <div className="my-4">
-        <h6>Excluded</h6>
-        <ul className="my-2 flex flex-col gap-2">
-          {contain?.exclusive?.map((item) => (
-            <li key={item}>
-              <span className="font-semibold">{item.split(":")[0]}</span>
-              {item?.split(":")[1]}{" "}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="my-4">
-        <h6>Terms And Conditions</h6>
-        <p className="text-base my-2 font-semibold">Booking and Payment</p>
-        <ul>
-          <li className="my-1">
-            <span className="font-semibold">Deposit:</span>{" "}
-            {contain?.booking?.deposit}
-          </li>
-          <li className="my-1">
-            <span className="font-semibold">Balance:</span>{" "}
-            {contain?.booking?.balance}
-          </li>
-          <li className="my-1">
-            <span className="font-semibold">Payment Method:</span>{" "}
-            {contain?.booking?.paymentMethod}
-          </li>
-          <li className="my-1">
-            <span className="font-semibold">Note:</span>{" "}
-            {contain?.booking?.note}
-          </li>
-        </ul>
-        <p className="text-base my-2 font-semibold">Cancellation Policy</p>
-        <ul>
-          {contain?.cancellationPolicy?.map((item) => (
-            <li key={item} className="my-1">
-              <span className="font-semibold">{item?.split(":")[0]}:</span>{" "}
-              {item?.split(":")[1]}
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center gap-4 my-4">
+          <span className="p-2 rounded-md bg-blue-100">
+            <div className="relative w-4 h-4">
+              <Image
+                src={phoneIcon}
+                alt="phone"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </span>
+          <p className="text-secondary text-sm xl:text-base ">
+            +975-1-12345678
+          </p>
+        </div>
       </div>
     </div>
   );

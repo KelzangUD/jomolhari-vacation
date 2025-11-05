@@ -55,7 +55,7 @@ export default function UpcomingEvents() {
       {data?.length > 0 && (
         <div
           ref={sectionRef}
-          className="p-5 pb-10 md:pb-15 xl:pb-20 2xl:pb-25 md:p-10 xl:p-15 2xl:p-20 bg-light-secondary"
+          className="p-5 pb-10 md:pb-15 xl:pb-20 2xl:pb-25 md:p-10 xl:p-15 2xl:p-20 bg-gray-100"
         >
           <h4 ref={titleRef}>Upcoming Events</h4>
           <p ref={subtitleRef} className="mb-4 md:mb-6 2xl:mt-4 ">

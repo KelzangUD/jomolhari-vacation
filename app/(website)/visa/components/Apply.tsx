@@ -1,3 +1,29 @@
+import Image, { StaticImageData } from "next/image";
+
+import passportIcon from "@/public/passport.svg";
+import airplaneIcon from "@/public/airplane.svg";
+import cameraIcon from "@/public/camera.svg";
+import cardIcon from "@/public/card.svg";
+
+const ListItem = ({
+  icon,
+  alt,
+  desc,
+}: {
+  icon: StaticImageData;
+  alt: string;
+  desc: string;
+}) => {
+  return (
+    <li className="flex gap-4 items-center">
+      <div className="relative w-5 h-5">
+        <Image src={icon} alt={alt} fill className="object-contain" />
+      </div>
+      <div>{desc}</div>
+    </li>
+  );
+};
+
 export default function Apply() {
   return (
     <div className="p-4 md:p-6 xl:p-8 bg-white rounded-2xl shadow">
@@ -5,27 +31,25 @@ export default function Apply() {
       <p className="text-xs md:text-base text-secondary">
         To apply for a visa online, please prepare:
       </p>
-      <ul className="flex flex-col gap-2 mt-3 list-disc ml-6 text-xs md:text-sm">
-        <li>
-          A{" "}
-          <span className="font-semibold">
-            digital copy of your valid passport
-          </span>
-          .
-        </li>
-        <li>
-          A <span className="font-semibold">recent digital passport photo</span>
-          .
-        </li>
-        <li>
-          Your{" "}
-          <span className="font-semibold">arrival and departure dates</span>.
-        </li>
-        <li>
-          <span className="font-semibold">Payment details</span>
-        </li>
+      <ul className="flex flex-col gap-4 my-6 text-xs md:text-sm">
+        <ListItem
+          icon={passportIcon}
+          alt="passport"
+          desc="A digital copy of your valid passport"
+        />
+        <ListItem
+          icon={cameraIcon}
+          alt="camera"
+          desc="A recent digital passport photo"
+        />
+        <ListItem
+          icon={airplaneIcon}
+          alt="airplane"
+          desc="Your arrival and departure dates"
+        />
+        <ListItem icon={cardIcon} alt="card" desc="Payment details" />
       </ul>
-      <p className="my-2 text-xs md:text-sm italic leading-5 text-secondary">
+      <p className="my-2 text-xs md:text-sm italic leading-6 text-secondary">
         (Tip: Inform your bank about the international transfer to Bhutan to
         avoid delays.)
       </p>

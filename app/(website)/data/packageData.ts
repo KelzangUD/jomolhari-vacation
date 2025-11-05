@@ -63,7 +63,7 @@ export const packageData = [
           amount: 22500,
         },
       ],
-      pricingPerHead: "Nu. 41,000/- for Trekking.",
+      pricingPerHead: "Nu. 41,000/-",
     },
     inclusive: {
       supportAndStaff:
@@ -80,21 +80,6 @@ export const packageData = [
       "Personal Gear: Sleeping bag & mat, lunch box & water bottle.",
       "Meals/Drinks: 1st day's breakfast, last day's dinner, alcohol, and other drinks.",
       "Expenses: Travel insurance and other personal expenses (laundry, tips, souvenirs).",
-    ],
-    booking: {
-      deposit:
-        "A 10% (Non-refundable) deposit is required at the time of booking.",
-      balance:
-        "The remaining balance must be paid 20 days before the start of the trek.",
-      paymentMethod: "Payments can be made via bank transfer.",
-      note: "Must take cash for more convenience during the trek.",
-    },
-    cancellationPolicy: [
-      "60+ days out: 100% refund.",
-      "30–59 days out: 75% refund.",
-      "15–29 days out: 50% refund.",
-      "0–14 days out: 100% cancellation fee (No refund).",
-      `No Show: No refund will be made for missed connections or "no show."`,
     ],
   },
 ];

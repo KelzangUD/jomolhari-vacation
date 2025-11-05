@@ -1,3 +1,27 @@
+const ListItem = ({
+  index,
+  title,
+  subtitle,
+}: {
+  index: number;
+  title: string;
+  subtitle: string;
+}) => {
+  return (
+    <li className="flex gap-6">
+      <div className="items-center">
+        <p className="px-3 rounded-full bg-blue-100 text-primary text-sm font-semibold">
+          {index}
+        </p>
+      </div>
+      <div>
+        <span className="font-semibold gap-2 block">{title}</span>
+        <span className="text-secondary">{subtitle}</span>
+      </div>
+    </li>
+  );
+};
+
 export default function Steps() {
   return (
     <div className="p-4 md:p-6 xl:p-8 bg-white rounded-2xl shadow">
@@ -6,43 +30,35 @@ export default function Steps() {
         Follow these simple steps to complete your application:
       </p>
       <ul className="flex flex-col gap-4 mt-3 ml-2 md:ml-4 text-xs md:text-sm">
-        <li className="flex flex-col">
-          <span className="font-semibold">
-            1. Sign our Pledge of Friendship
-          </span>
-          <span className="text-secondary">
-            {" "}
-            A commitment to protect, preserve, and positively contribute to
-            Bhutan.
-          </span>
-        </li>
-        <li className="flex flex-col">
-          <span className="font-semibold">2. Create an account</span>
-          <span className="text-secondary">
-            Create an account on the visa portal.
-          </span>
-        </li>
-        <li className="flex flex-col">
-          <span className="font-semibold">3. Add your travel information.</span>
-          <span className="text-secondary">
-            Enter your planned travel dates and details
-          </span>
-        </li>
-        <li className="flex flex-col">
-          <span className="font-semibold">4. Pay the visa fee and SDF</span>
-          <span className="text-secondary">
-            Complete the payment for your planned stay.
-          </span>
-        </li>
-        <li className="flex flex-col">
-          <span className="font-semibold">5. Submit your application.</span>
-          <span className="text-secondary">
-            You can save your application anytime and return later to complete
-            it.
-          </span>
-        </li>
+        <ListItem
+          index={1}
+          title="Sign our Pledge of Friendship"
+          subtitle="A commitment to protect, preserve, and positively contribute to
+              Bhutan."
+        />
+        <ListItem
+          index={2}
+          title="Create an account"
+          subtitle="Create an account on the visa portal."
+        />
+        <ListItem
+          index={3}
+          title="Add your travel information"
+          subtitle="Enter your planned travel dates and details."
+        />
+        <ListItem
+          index={4}
+          title="Pay the visa fee and SDF"
+          subtitle="Complete the payment for your planned stay."
+        />
+        <ListItem
+          index={5}
+          title="Submit your application."
+          subtitle="You can save your application anytime and return later to complete
+            it."
+        />
       </ul>
-      <p className="text-xs md:text-base my-4 bg-gray-100 p-2 rounded-md">
+      <p className="text-xs md:text-sm my-4 bg-gray-100 p-2 rounded-md">
         Once submitted, your visa will be reviewed within
         <span className="font-semibold"> five working days</span>.
       </p>

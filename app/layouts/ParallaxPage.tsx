@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Image from "next/image";
-import Hero from "./Hero";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 

@@ -1,7 +1,14 @@
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image, { StaticImageData } from "next/image";
 import calenderIcon from "@/public/calendar.svg";
 import markerIcon from "@/public/marker.svg";
 import trophyIcon from "@/public/trophy.svg";
+gsap.registerPlugin(ScrollTrigger);
 
 const TimeLineData = [
   {
@@ -51,11 +58,51 @@ const TimeLineItem: React.FC<{
 };
 
 export default function Story() {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const timelineRef = useRef(null);
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        titleRef.current,
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+      gsap.fromTo(
+        timelineRef.current,
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          delay: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: timelineRef.current,
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    },
+    { scope: sectionRef }
+  );
   return (
-    <div className="bg-white/70 bg-cover bg-center bg-[url('/story-bg.jpg')] bg-blend-overlay w-full h-90 lg:h-100 xl:h-120 2xl:h-150 px-5 md:px-10 xl:px-15 2xl:px-20">
+    <div
+      ref={sectionRef}
+      className="bg-white/70 bg-cover bg-center bg-[url('/story-bg.jpg')] bg-scroll bg-blend-overlay w-full h-90 lg:h-100 xl:h-120 2xl:h-150 px-5 md:px-10 xl:px-15 2xl:px-20"
+    >
       <div className="flex flex-col justify-center gap-2 md:gap-4 lg:gap-6 h-[inherit] xl:gap-8">
-        <h4>Our Story</h4>
-        <div className="flex flex-col">
+        <h4 ref={titleRef}>Our Story</h4>
+        <div ref={timelineRef} className="flex flex-col">
           {TimeLineData?.map((item, index) => (
             <TimeLineItem
               key={item.title}

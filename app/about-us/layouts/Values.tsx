@@ -1,17 +1,54 @@
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import Image, { StaticImageData } from "next/image";
 import mountainImage from "@/public/mountain.svg";
 import leafImage from "@/public/leaf.svg";
 import usersImage from "@/public/users.svg";
 
+gsap.registerPlugin(ScrollTrigger);
+
 type CardProps = {
   image: StaticImageData;
   title: string;
   desc: string;
+  index: number;
 };
 
-const Card: React.FC<CardProps> = ({ image, title, desc }) => {
+const Card: React.FC<CardProps> = ({ image, title, desc, index }) => {
+  const cardRef = useRef(null);
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        cardRef.current,
+        {
+          scale: 0.8,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          delay: index * 0.5,
+          ease: "none",
+          scrollTrigger: {
+            trigger: cardRef.current,
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    },
+    { scope: cardRef }
+  );
   return (
-    <div className="border border-border rounded-md md:rounded-2xl p-4 xl:p-8 bg-white">
+    <div
+      ref={cardRef}
+      className="border border-border rounded-md md:rounded-2xl p-4 xl:p-8 bg-white"
+    >
       <div className="relative w-5 h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7">
         <Image
           src={image}
@@ -27,24 +64,51 @@ const Card: React.FC<CardProps> = ({ image, title, desc }) => {
 };
 
 export default function Values() {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        titleRef.current,
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    },
+    { scope: sectionRef }
+  );
   return (
-    <section className="p-5 md:p-10 xl:px-15 2xl:p-20 bg-white">
-      <h4>Values</h4>
+    <section
+      ref={sectionRef}
+      className="p-5 md:p-10 xl:px-15 2xl:p-20 bg-white"
+    >
+      <h4 ref={titleRef}>Values</h4>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-6 my-2 md:my-5">
         <Card
           image={mountainImage}
           title="Authenticity"
           desc="We offer genuine experiences that immerse you in Bhutanese culture and natural beauty."
+          index={1}
         />
         <Card
           image={leafImage}
           title="Sustainability"
           desc="We are dedicated to responsible travel that minimizes our environmental impact."
+          index={2}
         />
         <Card
           image={usersImage}
           title="Community"
           desc="We work closely with local communities to support their livelihoods and preserve their heritage."
+          index={3}
         />
       </div>
     </section>

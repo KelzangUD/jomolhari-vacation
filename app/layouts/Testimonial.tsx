@@ -28,7 +28,6 @@ type TestimonialCardProps = {
   review: number;
 };
 
-
 const TestimonialCard: React.FC<TestimonialCardProps> = ({
   testimonial,
   name,
@@ -79,6 +78,7 @@ export default function Testimonial() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
+  const testimonialRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   useGSAP(
     () => {
@@ -111,6 +111,21 @@ export default function Testimonial() {
           },
         }
       );
+      gsap.fromTo(
+        testimonialRef.current,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 2,
+          delay: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: testimonialRef.current,
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
     },
     { scope: sectionRef, revertOnUpdate: true }
   );
@@ -134,7 +149,7 @@ export default function Testimonial() {
           trails with us.
         </p>
       </div>
-      <div className="relative w-full overflow-hidden">
+      <div ref={testimonialRef} className="relative w-full overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{

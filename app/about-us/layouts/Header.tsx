@@ -20,11 +20,11 @@ export default function Header() {
     () => {
       gsap.fromTo(
         titleRef.current,
-        { y: -10, opacity: 0 },
+        { y: -20, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 2,
+          duration: 1,
           ease: "power2.out",
           scrollTrigger: {
             trigger: titleRef.current,
@@ -34,12 +34,12 @@ export default function Header() {
       );
       gsap.fromTo(
         subtitleRef.current,
-        { y: 10, opacity: 0 },
+        { y: 20, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 1,
-          // delay: 0.5,
+          duration: 0.5,
+          delay: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: subtitleRef.current,
@@ -52,31 +52,40 @@ export default function Header() {
   );
 
   return (
-    <section ref={sectionRef} className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-white">
-      <div className="flex flex-col justify-center h-[inherit] gap-6 xl:gap-8 mt-15">
-        <h1
+    <section
+      ref={sectionRef}
+      className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-black/60 bg-cover bg-center bg-[url('/header.jpg')] bg-scroll bg-blend-overlay"
+    >
+      <div className="flex flex-col justify-center items-center h-[inherit] gap-6 xl:gap-8 mt-15">
+        <span
+          className="flex flex-col gap-6 md:gap-8 items-center my-8"
           ref={titleRef}
-          className="font-bold flex items-center gap-4 text-4xl xl:mt-0 xl:leading-18 lg:text-6xl xl:text-7xl"
         >
-          <span className="relative w-14 h-14">
+          <span className="relative w-14 md:w-25 h-14 md:h-25">
             <Image
-              src="./logo-blue.svg"
+              src="./logo.svg"
               alt="logo"
               fill
               className="object-contain"
             />
           </span>
-          Jomolhari Vacation
-        </h1>
-        <h4 className="-mt-6">Experience the life of Highlanders in all Seasons with Reasons</h4>
+          <h1 className="text-white font-bold flex items-center gap-4 text-4xl xl:mt-0 xl:leading-18 lg:text-6xl xl:text-7xl">
+            Jomolhari Vacation
+          </h1>
+          <h4 className="text-white -mt-6">
+            <q>
+              Experience the life of Highlanders in all Seasons with Reasons
+            </q>
+          </h4>
+        </span>
         <p
           ref={subtitleRef}
-          className="2xl:text-2xl xl:leading-8 2xl:leading-9 tracking-wide text-justify"
+          className="2xl:text-2xl xl:leading-8 2xl:leading-9 max-w-2xl tracking-wide text-center text-gray-300 pb-50"
         >
           From alpine meadows to nomadic camps,
-          <b>Jomolhari Vacation</b> brings you
-          closer to <b>Bhutan’s</b> wild beauty with
-          expert guides and seamless planning.
+          <b className="text-white">Jomolhari Vacation</b> brings you closer to{" "}
+          <b className="text-white">Bhutan’s</b> wild beauty with expert guides
+          and seamless planning.
         </p>
       </div>
     </section>

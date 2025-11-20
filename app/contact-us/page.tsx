@@ -1,7 +1,15 @@
+"use client";
+
 import Image from "next/image";
-import PrimaryButton from "../ui/PrimaryButton";
+import { useState } from "react";
 
 export default function Contact() {
+  const [details, setDetails] = useState({
+    // name: "",
+    // emailId: "",
+    subject: "",
+    message: "",
+  });
   return (
     <div className="p-5 md:p-10 xl:p-15 2xl:p-20  bg-white">
       <h4>Contact Us</h4>
@@ -9,25 +17,36 @@ export default function Contact() {
         We’re here to help! Reach out to us with any questions or inquires about
         our trekking/hiking adventure’s in Bhutan.
       </p>
-      <div className="mt-4 xl:mt-10">
+      {/* <div className="mt-4 xl:mt-10">
         <label className="text-xs md:text-base">Your Name</label>
         <input
           placeholder="Enter Your Name"
           className="border border-border py-2 px-2 md:px-6 bg-border/10 rounded-md md:rounded-xl w-full my-3 text-xs md:text-base"
         />
-      </div>
-      <div className="xl:mt-2">
+      </div> */}
+      {/* <div className="xl:mt-2">
         <label className="text-xs md:text-base">Your Email</label>
         <input
           placeholder="Enter Your Email"
           className="border border-border py-2 px-2 md:px-6 bg-border/10 rounded-md md:rounded-xl w-full my-3 text-xs md:text-base"
+          onChange={(e) => setDetails((prev) => ({
+            ...prev,
+            email: e?.target?.value
+          }))}
         />
-      </div>
+      </div> */}
       <div className="xl:mt-2">
         <label className="text-xs md:text-base">Subject</label>
         <input
           placeholder="Enter The Subject"
           className="border border-border py-2 px-2 md:px-6 bg-border/10 rounded-md md:rounded-xl w-full my-3 text-xs md:text-base"
+          onChange={(e) =>
+            setDetails((prev) => ({
+              ...prev,
+              subject: e?.target?.value,
+            }))
+          }
+          value={details?.subject}
         />
       </div>
       <div className="xl:mt-2">
@@ -36,10 +55,29 @@ export default function Contact() {
           placeholder="Enter Your Message"
           className="border border-border py-2 px-2 md:px-6 bg-border/10 rounded-md md:rounded-xl w-full my-3 text-xs md:text-base"
           rows={6}
+          onChange={(e) =>
+            setDetails((prev) => ({
+              ...prev,
+              message: e?.target?.value,
+            }))
+          }
+          value={details?.message}
         />
       </div>
       <div className="xl:mt-4">
-        <PrimaryButton text="Send Message" />
+        <a
+          className={`bg-primary py-3 px-6 rounded-md overflow-hidden cursor-pointer text-sm lg:text-base text-white hover:bg-blue-700`}
+          href={`mailto:sonamvacation@gmail.com?subject=${details?.subject}&body=${details?.message}`}
+          onClick={() =>
+            setDetails((prev) => ({
+              ...prev,
+              subject: "",
+              message: "",
+            }))
+          }
+        >
+          Send Message
+        </a>
       </div>
       <div className="mt-6 xl:mt-10">
         <p className="font-bold my-2">Direct Contact</p>

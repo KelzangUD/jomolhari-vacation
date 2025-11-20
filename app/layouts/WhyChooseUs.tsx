@@ -56,7 +56,7 @@ const Card: React.FC<CardProps> = ({ image, title, desc }) => {
         />
       </div>
       <p className="font-bold my-2 lg:my-4">{title}</p>
-      <p className="lg:mt-4 text-secondary text-xs lg:text-sm 2xl:text-base">
+      <p className="lg:mt-4 text-gray-600 text-xs lg:text-sm 2xl:text-base">
         {desc}
       </p>
     </div>

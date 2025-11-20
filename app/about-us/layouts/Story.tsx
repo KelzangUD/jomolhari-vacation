@@ -47,7 +47,7 @@ const TimeLineItem: React.FC<{
         </div>
         <div>
           <h6>{title}</h6>
-          <p className="text-xs md:text-base text-secondary">{description}</p>
+          <p className="text-xs md:text-base text-gray-600">{description}</p>
         </div>
       </div>
       {index < TimeLineData.length - 1 && (

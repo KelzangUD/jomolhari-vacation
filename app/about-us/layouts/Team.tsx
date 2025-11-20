@@ -54,7 +54,7 @@ const TeamMemberCard: React.FC<{
         />
       </div>
       <h6 className="mt-2 lg:mt-4 xl:mt-6">{name}</h6>
-      <p className="text-secondary text-xs md:text-base">{role}</p>
+      <p className="text-gray-600 text-xs md:text-base">{role}</p>
     </div>
   );
 };

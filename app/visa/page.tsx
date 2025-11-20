@@ -84,7 +84,7 @@ export default function Visa() {
       ref={sectionRef}
       className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-cover bg-top bg-gray-100 bg-[url('/map.svg')] bg-blend-overlay"
     >
-      <h4 ref={titleRef} className="mt-15">
+      <h4 ref={titleRef}>
         Bhutan Visa Information
       </h4>
       <p ref={subtitleRef} className="my-2 text-xs md:text-base">

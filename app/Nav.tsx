@@ -11,15 +11,15 @@ import closeIcon from "@/public/close.svg";
 export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
   return (
-    <nav className="fixed z-150 top-0 backdrop-blur-2xl bg-black/50 w-full px-5 xl:px-10 2xl:px-30 max-w-dvw xl:left-1/2 xl:-translate-x-1/2">
-      <div className="hidden md:flex justify-between items-center w-stretch mx-auto py-3">
+    <nav className="sticky z-150 top-0 bg-black w-full px-5 md:px-10">
+      <div className="hidden md:flex justify-between items-center py-6">
         <Link href="/">
           <button className="cursor-pointer transition delay-150 duration-300 ease-in hover:scale-110 pt-1">
             <Image src={logoIcon} alt="logo" width={35} height={35} />
           </button>
         </Link>
         <div>
-          <ul className="flex gap-15 items-center">
+          <ul className="flex gap-10 xl:gap-15 items-center">
             <li className="flex-grow group-hover:text-primary">
               <NavLink routeName="About Us" href="/about-us" />
             </li>

@@ -83,7 +83,7 @@ export default function Trek() {
 
   return (
     <div className="z-10 p-5 md:p-10 xl:p-25 bg-white">
-      <h4 className="mt-15 md:mt-10">{contain?.title}</h4>
+      <h4>{contain?.title}</h4>
       <div className="flex flex-col md:flex-row md:justify-between gap-6 my-4 md:my-10">
         <TrekOverview
           trekOverview={contain?.trekOverview}

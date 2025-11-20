@@ -4,7 +4,7 @@ import PrimaryButton from "../ui/PrimaryButton";
 export default function Contact() {
   return (
     <div className="p-5 md:p-10 xl:p-15 2xl:p-20  bg-white">
-      <h4 className="mt-15">Contact Us</h4>
+      <h4>Contact Us</h4>
       <p className="my-2 xl:my-4">
         We’re here to help! Reach out to us with any questions or inquires about
         our trekking/hiking adventure’s in Bhutan.
@@ -48,7 +48,10 @@ export default function Contact() {
           whatsapp
         </p>
         <div className="flex items-center gap-2 xl:gap-10 my-4 xl:my-10">
-          <span className="p-2 xl:p-4 rounded-md bg-blue-100">
+          <a
+            className="p-2 xl:p-4 rounded-md bg-blue-100 cursor-pointer"
+            href="tel:+97517914799"
+          >
             <div className="relative w-4 h-4 2xl:w-6 2xl:h-6">
               <Image
                 src="/phone.svg"
@@ -57,12 +60,10 @@ export default function Contact() {
                 className="object-cover"
               />
             </div>
-          </span>
+          </a>
           <span className="ml-2">
             <p className="text-sm xl:text-base">Phone/whatsapp info</p>
-            <p className="text-secondary text-sm xl:text-base ">
-              +975-1-12345678
-            </p>
+            <p className="text-secondary text-sm xl:text-base ">+97517914799</p>
           </span>
         </div>
       </div>

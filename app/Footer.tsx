@@ -8,15 +8,19 @@ export default function Footer() {
           <h4>Jomolhari Vacation</h4>
           <p className="my-4 text-sm 2xl:text-lg">
             More than just travel-we craft experiences{" "}
-            <b className="font-extrabold">beyond reach</b>. Whether you
-            seek calm snowy retreats or vibrant mountain views, your next
+            <b className="font-extrabold">beyond reach</b>. Whether you seek
+            calm snowy retreats or vibrant mountain views, your next
             unforgettable adventure begins here.
           </p>
         </div>
         <div className="md:text-right">
           <h4>Reach Us</h4>
           <div className="flex md:justify-end gap-5 my-2 md:my-4">
-            <button>
+            <a
+              href="https://wa.me/+97517914799"
+              target="_blank"
+              className="cursor-pointer transition duration-300 ease-in-out hover:scale-115"
+            >
               <div className="relative w-5 h-5 md:w-6 md:h-6">
                 <Image
                   src="/whatsapp.svg"
@@ -25,8 +29,12 @@ export default function Footer() {
                   className="object-cover bg-white p-1 rounded"
                 />
               </div>
-            </button>
-            <button>
+            </a>
+            <a
+              href="https://www.facebook.com/jomolharivacationtour/"
+              target="_blank"
+              className="cursor-pointer transition duration-300 ease-in-out hover:scale-115"
+            >
               <div className="relative w-5 h-5 md:w-6 md:h-6">
                 <Image
                   src="/facebook.svg"
@@ -35,8 +43,12 @@ export default function Footer() {
                   className="object-cover bg-white p-1 rounded"
                 />
               </div>
-            </button>
-            <button>
+            </a>
+            <a
+              href="https://www.instagram.com/jomolhari_vacation/"
+              target="_blank"
+              className="cursor-pointer transition duration-300 ease-in-out hover:scale-115"
+            >
               <div className="relative w-5 h-5 md:w-6 md:h-6">
                 <Image
                   src="/instagram.svg"
@@ -45,8 +57,12 @@ export default function Footer() {
                   className="object-cover bg-white p-1 rounded"
                 />
               </div>
-            </button>
-            <button>
+            </a>
+            <a
+              href="https://www.tiktok.com/@jomolharivac"
+              target="_blank"
+              className="cursor-pointer transition duration-300 ease-in-out hover:scale-115"
+            >
               <div className="relative w-5 h-5 md:w-6 md:h-6">
                 <Image
                   src="/tik-tok.svg"
@@ -55,8 +71,12 @@ export default function Footer() {
                   className="object-cover bg-white p-1 rounded"
                 />
               </div>
-            </button>
-            <button>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sonam-rinchen-44571816a/"
+              target="_blank"
+              className="cursor-pointer transition duration-300 ease-in-out hover:scale-115"
+            >
               <div className="relative w-5 h-5 md:w-6 md:h-6">
                 <Image
                   src="/linkedin.svg"
@@ -65,14 +85,14 @@ export default function Footer() {
                   className="object-cover bg-white p-1 rounded"
                 />
               </div>
-            </button>
+            </a>
           </div>
         </div>
       </div>
       <div className="my-2 md:my-0 xl:mb-4">
         <p className="text-xs lg:text-sm text-center text-secondary">
-          © 2025 Jomolhari Vacation. All rights reserved. Email:
-          sonamvacation@gmail.com | Phone: +975-2-322-444
+          © {new Date().getFullYear()} Jomolhari Vacation. All rights reserved.
+          Email: sonamvacation@gmail.com | Phone: +97517914799
         </p>
       </div>
     </footer>

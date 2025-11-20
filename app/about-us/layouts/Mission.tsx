@@ -47,7 +47,7 @@ export default function Mission() {
   return (
     <section
       ref={sectionRef}
-      className="p-5 md:p-10 xl:p-15 2xl:p-20  bg-black text-center text-white"
+      className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-gradient-to-b from-gray-200 to-gray-50 to-99% text-center"
     >
       <h1
         ref={titleRef}
@@ -57,7 +57,7 @@ export default function Mission() {
       </h1>
       <h4
         ref={subtitleRef}
-        className="text-center font-normal tracking-wide my-8 leading-12 text-gray-300"
+        className="text-center font-normal tracking-wide my-2 md:my-8 md:leading-12"
       >
         Provide authentic and transformative trekking experiences in the heart
         of the Himalayas. We are committed to sustainable tourism, preserving

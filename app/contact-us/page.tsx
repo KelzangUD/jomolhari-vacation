@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export default function Contact() {
   return (
@@ -27,12 +30,26 @@ export default function Contact() {
               </p>
             </span>
           </span>
-          <a
-            className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-blue-500"
-            href="tel:+97517914799"
+          <motion.div
+            initial={{
+              scale: 1,
+              y: 0,
+            }}
+            whileHover={{
+              y: -3,
+              scale: 1.1,
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
           >
-            Call
-          </a>
+            <a
+              className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-blue-500"
+              href="tel:+97517914799"
+            >
+              Call
+            </a>
+          </motion.div>
         </div>
         <div className="flex items-center justify-between">
           <span className="flex items-center gap-2 xl:gap-10">
@@ -51,12 +68,26 @@ export default function Contact() {
               </p>
             </span>
           </span>
-          <a
-            className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-blue-500"
-            href="mailto:sonamvacation@gmail.com"
+          <motion.div
+            initial={{
+              scale: 1,
+              y: 0,
+            }}
+            whileHover={{
+              y: -3,
+              scale: 1.1,
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
           >
-            Send Mail
-          </a>
+            <a
+              className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-blue-500"
+              href="mailto:sonamvacation@gmail.com"
+            >
+              Send Mail
+            </a>
+          </motion.div>
         </div>
       </div>
       <div>

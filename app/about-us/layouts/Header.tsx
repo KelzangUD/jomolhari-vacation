@@ -12,7 +12,7 @@ export default function Header() {
           whileInView={{ y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: false }}
-          className="flex flex-col gap-6 md:gap-8  md:items-center my-12"
+          className="flex flex-col gap-6 md:gap-8 items-center my-12"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.7 }}

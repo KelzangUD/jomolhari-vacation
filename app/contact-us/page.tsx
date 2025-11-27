@@ -12,7 +12,7 @@ export default function Contact() {
         our trekking/hiking adventure’s in Bhutan. You can reach us directly via
         phone or whatsapp or email.
       </p>
-      <div className="my-4 xl:my-10">
+      <div className="my-4 xl:my-10 flex flex-col gap-4 md:gap-6">
         <div className="flex items-center justify-between">
           <span className="flex items-center gap-2 xl:gap-10">
             <div className="relative w-4 h-4 2xl:w-6 2xl:h-6">
@@ -44,7 +44,7 @@ export default function Contact() {
             }}
           >
             <a
-              className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-blue-500"
+              className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-xs md:text-base text-blue-500"
               href="tel:+97517914799"
             >
               Call
@@ -82,7 +82,7 @@ export default function Contact() {
             }}
           >
             <a
-              className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-blue-500"
+              className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-xs md:text-base text-blue-500"
               href="mailto:sonamvacation@gmail.com"
             >
               Send Mail
@@ -92,13 +92,13 @@ export default function Contact() {
       </div>
       <div>
         <h4>Social Network</h4>
-        <div className="flex gap-5 mt-6 md:mt-8">
+        <div className="flex gap-5 mt-2 md:mt-8">
           <a
             href="https://wa.me/+97517914799"
             target="_blank"
             className="cursor-pointer transition duration-300 ease-in-out hover:scale-115 bg-gray-200 rounded"
           >
-            <div className="relative w-6 h-6 md:w-10 md:h-10">
+            <div className="relative w-8 h-8 md:w-10 md:h-10">
               <Image
                 src="/whatsapp.svg"
                 alt="whatsapp"
@@ -112,7 +112,7 @@ export default function Contact() {
             target="_blank"
             className="cursor-pointer transition duration-300 ease-in-out hover:scale-115 bg-gray-200 rounded"
           >
-            <div className="relative w-6 h-6 md:w-10 md:h-10">
+            <div className="relative w-8 h-8 md:w-10 md:h-10">
               <Image
                 src="/facebook.svg"
                 alt="facebook"
@@ -126,7 +126,7 @@ export default function Contact() {
             target="_blank"
             className="cursor-pointer transition duration-300 ease-in-out hover:scale-115 bg-gray-200 rounded"
           >
-            <div className="relative w-6 h-6 md:w-10 md:h-10">
+            <div className="relative w-8 h-8 md:w-10 md:h-10">
               <Image
                 src="/instagram.svg"
                 alt="instagram"
@@ -140,7 +140,7 @@ export default function Contact() {
             target="_blank"
             className="cursor-pointer transition duration-300 ease-in-out hover:scale-115 bg-gray-200 rounded"
           >
-            <div className="relative w-6 h-6 md:w-10 md:h-10">
+            <div className="relative w-8 h-8 md:w-10 md:h-10">
               <Image
                 src="/tik-tok.svg"
                 alt="whatsapp"
@@ -154,7 +154,7 @@ export default function Contact() {
             target="_blank"
             className="cursor-pointer transition duration-300 ease-in-out hover:scale-115 bg-gray-200 rounded"
           >
-            <div className="relative w-6 h-6 md:w-10 md:h-10">
+            <div className="relative w-8 h-8 md:w-10 md:h-10">
               <Image
                 src="/linkedin.svg"
                 alt="linkedin"

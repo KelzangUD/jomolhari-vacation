@@ -1,5 +1,5 @@
 "use client";
-// import ImageGrid from "./components/ImageGrid";
+
 import { motion } from "motion/react";
 import Masonry from "@/components/Masonry";
 
@@ -36,7 +36,6 @@ export default function Gallery() {
           through our curated collection of photos and videos from our treks.
         </p>
       </motion.div>
-      {/* <ImageGrid /> */}
       <div>
         <Masonry
           items={items}

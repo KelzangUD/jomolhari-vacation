@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 // import { SafeHtmlRenderer } from "../../components/SafeHtmlRenderer";
 import { packageData } from "../../data/packageData";
 import TrekOverview from "./components/TrekOverview";
@@ -101,32 +102,93 @@ export default function Trek() {
         </div>
       </div>
       <ItineraryOverview itineraryOverview={contain?.itineraryOverview} />
-      <PackagePricing
+      {/* <PackagePricing
         header={contain?.packagePricing?.header}
         tableContain={contain?.packagePricing?.tableContain}
         pricingPerHead={contain?.packagePricing?.pricingPerHead}
-      />
+      /> */}
       <Services inclusive={contain?.inclusive} exclusive={contain?.exclusive} />
       <TermsAndCondition />
       <div className="my-8 xl:mt-10">
-        <h6 className="my-1">Direct Contact</h6>
+        <h6 className="my-1">For More Information</h6>
         <p className="text-sm md:text-xl">
           For any inquires, you can reach us directly via phone or whatsapp.
         </p>
-        <div className="flex items-center gap-4 my-4">
-          <span className="p-2 rounded-md bg-blue-100">
-            <div className="relative w-4 h-4">
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-2 xl:gap-10">
+            <div className="relative w-4 h-4 2xl:w-6 2xl:h-6">
               <Image
-                src={phoneIcon}
+                src="/phone.svg"
                 alt="phone"
                 fill
                 className="object-cover"
               />
             </div>
+            <span className="ml-2">
+              <p className="text-sm xl:text-base">Phone/whatsapp info</p>
+              <p className="text-secondary text-sm xl:text-base ">
+                +97517914799
+              </p>
+            </span>
           </span>
-          <p className="text-secondary text-sm xl:text-base ">
-            +975-1-12345678
-          </p>
+          <motion.div
+            initial={{
+              scale: 1,
+              y: 0,
+            }}
+            whileHover={{
+              y: -3,
+              scale: 1.1,
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
+          >
+            <a
+              className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-xs md:text-base text-blue-500"
+              href="tel:+97517914799"
+            >
+              Call
+            </a>
+          </motion.div>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-2 xl:gap-10">
+            <div className="relative w-4 h-4 2xl:w-6 2xl:h-6">
+              <Image
+                src="/Mail.svg"
+                alt="phone"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <span className="ml-2">
+              <p className="text-sm xl:text-base">Mail</p>
+              <p className="text-secondary text-sm xl:text-base ">
+                sonamvacation@gmail.com
+              </p>
+            </span>
+          </span>
+          <motion.div
+            initial={{
+              scale: 1,
+              y: 0,
+            }}
+            whileHover={{
+              y: -3,
+              scale: 1.1,
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
+          >
+            <a
+              className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-xs md:text-base text-blue-500"
+              href="mailto:sonamvacation@gmail.com"
+            >
+              Send Mail
+            </a>
+          </motion.div>
         </div>
       </div>
     </div>

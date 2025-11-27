@@ -25,7 +25,7 @@ export default function TermsAndCondition() {
         </p>
         <p className="text-sm md:text-base text-secondary my-0.5 font-normal text-justify">
           2. <b className="text-black font-semibold">Balance:</b> The remaining
-          balance must be paid 20 days before the start of the trek.
+          balance must be paid 2 months before the start of the trek.
         </p>
         <p className="text-sm md:text-base text-secondary my-0.5 font-normal text-justify">
           3. <b className="text-black font-semibold">Payment Method:</b>{" "}
@@ -33,7 +33,7 @@ export default function TermsAndCondition() {
         </p>
         <p className="text-sm md:text-base text-secondary my-0.5 font-normal text-justify">
           4. <b className="text-black font-semibold">Note:</b> Must take cash
-          for more convenience during the trek
+          for more convenience during the trek.
         </p>
       </details>
       <details className="p-8 rounded-md shadow-none bg-background">

@@ -46,7 +46,7 @@ export default function Values() {
         <Card
           image={mountainImage}
           title="Authenticity"
-          desc="We offer genuine experiences that immerse you in Bhutanese culture and natural beauty."
+          desc="We offer genuine experiences that immerse you in Bhutanese highlanders' culture and natural landscape."
           index={1}
         />
         <Card

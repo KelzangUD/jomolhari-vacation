@@ -26,14 +26,17 @@ const NumberCard: React.FC<NumberCardProps> = ({ icon, title, number }) => {
     >
       <div className="text-black">
         <p className="my-1 md:my-2">{title}</p>
-        <CountUp
-          from={0}
-          to={number}
-          separator=","
-          direction="up"
-          duration={0.5}
-          className="count-up-text font-bold ml:font-extrabold ml:text-xl xl:text-3xl"
-        />
+        <span className="font-bold ml:font-extrabold ml:text-xl xl:text-3xl">
+          <CountUp
+            from={0}
+            to={number}
+            separator=","
+            direction="up"
+            duration={0.5}
+            className="count-up-text"
+          />
+          +
+        </span>
       </div>
       <div className="relative w-6 h-6 xl:w-10 xl:h-10">
         <Image

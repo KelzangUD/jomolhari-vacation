@@ -26,7 +26,7 @@ const TimeLineItem: React.FC<{
         </div>
         <div>
           <h6>{title}</h6>
-          <p className="text-xs md:text-base text-gray-600">{description}</p>
+          <p className="text-xs md:text-base text-gray-600 my-2">{description}</p>
         </div>
       </motion.div>
       {index < storyData.length - 1 && (

@@ -3,7 +3,7 @@ import JomolhariTrekImage from "@/public/jomolhari-trek.png";
 export const packageData = [
   {
     title: "Jomolhari Festival Trek",
-    packageDuration: "5D4N",
+    packageDuration: "4N5D",
     packageFee: "Nu. 41,000/-",
     difficulty: "Moderate",
     groupSize: "3 people",
@@ -67,18 +67,18 @@ export const packageData = [
     },
     inclusive: {
       supportAndStaff:
-        "Porter ponies, professional guide, cook, assistance, trekking chef, and trekking assistants.",
+        "Potter ponies, professional trekking guide, Trekking cook, and trekking assistance",
       logistics: "Transportation from Paro (Drop & Pick).",
       accommodationAndMeals:
         "Accommodation (Tent, Guest House & Farm house), all meals (B, L & D), fruits, tea & snacks, and boiled drinking water.",
       equipment:
-        "Sleeping Tent, solar lamp, pillow, hot water bag, kitchen sets, kitchen tent, toilet with Indian pot.",
+        "Sleeping Tent, solar lamp, pillow, hot water bag, kitchen sets, kitchen tent, toilet.",
       Other: "Hot water for morning/evening washing and First Aid Kit.",
     },
     exclusive: [
       "Riding Horse: (USD 24/day if arranged).",
-      "Personal Gear: Sleeping bag & mat, lunch box & water bottle.",
-      "Meals/Drinks: 1st day's breakfast, last day's dinner, alcohol, and other drinks.",
+      "Personal Gear: Trekking gears.",
+      "Drinks: Alcohol.",
       "Expenses: Travel insurance and other personal expenses (laundry, tips, souvenirs).",
     ],
   },

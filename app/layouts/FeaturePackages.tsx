@@ -18,7 +18,8 @@ export default function FeaturePackage() {
       >
         <h4>Feature Packages</h4>
         <p className="my-2 lg:my-4">
-          Discover our top travel experiences designed for every explorer.
+          Discover our top adventure trekking experiences designed for every
+          explorer.
         </p>
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 my-5 md:my-10">

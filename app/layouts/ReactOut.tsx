@@ -18,12 +18,12 @@ export default function ReactOut() {
         <div className="absolute z-10 flex flex-col justify-center gap-3 md:gap-4 xl:gap-6">
           <h4>
             Reach Out Anytime <br />
-            For Adventure Or Info
+            For Adventure Or More Information
           </h4>
           <p>
             Whether you’re planning your next adventure, need more details about
             our services,
-            <br /> or just want to chat about travel- don’t hesitate to reach
+            <br /> or just want to chat about trekking in Bhutan-don’t hesitate to reach
             out
           </p>
           <Link href="/contact-us">

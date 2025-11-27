@@ -13,11 +13,45 @@ export const faqData = [
   {
     question: "What currency is used in Bhutan?",
     answer:
-      "Bhutan’s currency is called ngultrum. It’s 1:1 with Indian rupees.",
+      "Bhutan currency is Ngultrum (BTN) which is 1:1 with Indian Rupees. Other currency that can use in Bhutan are, American Dollar (USD), Indian Rupees (INR), Crypto currency in few markets, and Australian Dollar (AUD).",
   },
   {
     question: "Which power plug is standard in Bhutan?",
     answer:
       "Three different electrical plugs are used throughout Bhutan: the British plug (three square pins, compatible with type G sockets), the European plug (two round pins, compatible with type C socket) and the Indian plug (three thick round pins, compatible with type D sockets). It’s a good idea to bring adaptors for all three.",
+  },
+  {
+    question: "When should I make my tour payment?",
+    answer:
+      "We require full tour payment at least 2 months before your arrival in Bhutan. This allows us to: Process and clear your visa with the Department of Immigration (visa is only applied after full payment). Reconfirm hotels, guides, vehicles, and other travel arrangements. Secure bookings for luxury hotels and airlines, which often require payment up to 3 months in advance, especially during peak seasons.",
+  },
+  {
+    question:
+      "What makes Jomolhari Vacation different from other travel agencies in Bhutan?",
+    answer: `Jomolhari Vacation stands out for its authentic, community-centered, and personalized approach to travel in Bhutan. Here’s what makes us different:
+1. Deep Local Expertise
+
+Based in Paro, we work closely with local communities, homestays, and trekking groups—offering experiences rooted in Bhutanese culture and everyday life, not generic sightseeing.
+
+2. Authentic, Responsible Travel
+
+We promote eco-friendly and community-led tourism, ensuring that your visit benefits local people, supports conservation efforts, and respects Bhutan’s values.
+
+3. Personalized Itineraries
+
+Every trip is tailored to your interests—whether it’s trekking, culture, spirituality, food, photography, or local village experiences.
+No cookie-cutter tours.
+
+4. Strong Trekking & Adventure Focus
+
+With routes like Jomolhari, Soe Yaksa, Snowman, and Laya Gasa, we specialize in high-altitude trekking and immersive wilderness journeys, supported by trained local guides and youth groups.
+
+5. Reliable Service & Smooth Logistics
+
+From visa processing to hotel coordination and on-ground support, we handle every detail so travelers can enjoy a stress-free journey.
+
+6. Local Hospitality at Its Best
+
+Guests often highlight our warmth, genuine care, and the feeling of being welcomed like family—something large agencies can’t replicate."`,
   },
 ];

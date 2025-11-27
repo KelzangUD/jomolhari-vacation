@@ -11,8 +11,8 @@ export default function Mission() {
         transition={{ duration: 0.5 }}
         viewport={{ once: false }}
       >
-        <h1 className="font-bold text-3xl xl:mt-0 xl:leading-18 lg:text-5xl xl:text-6xl">
-          Mission
+        <h1 className="font-bold text-3xl xl:mt-0 xl:leading-18 lg:text-4xl xl:text-5xl">
+          To Our Guests
         </h1>
       </motion.div>
       <motion.div
@@ -22,10 +22,13 @@ export default function Mission() {
         viewport={{ once: false }}
       >
         <h4 className="text-center font-normal tracking-wide my-2 md:my-8 md:leading-12">
-          Provide authentic and transformative trekking experiences in the heart
-          of the Himalayas. We are committed to sustainable tourism, preserving
-          Bhutan’s unique culture and environment, and creating unforgettable
-          journeys for our clients.
+          At <b>Jomolhari Vacation</b>, you’re not just another trekker-you’re
+          our honored guest. Our affordable, thoughtfully crafted packages
+          invite you to explore <b>breathtaking destinations</b> (above 2000
+          meters) and embrace a journey like no other. Join us in discovering
+          happiness,
+          <b>nomadic adventure</b>, and <b>meaningful connections</b> with the
+          remotest communities of Bhutan.
         </h4>
       </motion.div>
     </section>

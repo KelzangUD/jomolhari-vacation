@@ -54,7 +54,7 @@ export default function Services({
         <ul className="my-4 flex flex-col gap-2">
           <ListItem
             icon={usersIcon}
-            main="Support & Staff"
+            main="Supporting Staff"
             sub={inclusive?.supportAndStaff}
           />
           <ListItem

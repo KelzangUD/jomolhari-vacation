@@ -1,16 +1,8 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import personImage from "@/public/person.jpeg";
 import { motion } from "motion/react";
-
-const teamMembers = [
-  {
-    name: "Sonam Rinchen",
-    role: "Founder & Lead Guide",
-    image: personImage,
-  },
-];
+import { teamMemberData } from "@/app/data/teamMemberData";
 
 const TeamMemberCard: React.FC<{
   name: string;
@@ -58,7 +50,7 @@ export default function Team() {
         </p>
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-2 xl:gap-4 xl:mt-10">
-        {teamMembers?.map((item) => (
+        {teamMemberData?.map((item) => (
           <TeamMemberCard
             key={item.name}
             name={item.name}

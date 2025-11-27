@@ -45,7 +45,7 @@ export default function FAQ() {
           {faqData.map((item, index) => (
             <AccordionItem key={item?.question}>
               <AccordionButton>
-                {index + 1} {item?.question}
+                {index + 1}.  {item?.question}
               </AccordionButton>
               <AccordionPanel>
                 <div className="text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-gray-700">

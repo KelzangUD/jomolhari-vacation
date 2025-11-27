@@ -1,25 +1,9 @@
 "use client";
-import { useState, useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { useState } from "react";
 import Image from "next/image";
 import starIcon from "@/public/star.svg";
 import { testimonialData } from "../data/testimonialData";
-
-gsap.registerPlugin(ScrollTrigger);
-
-interface Testimonial {
-  testimonial: string;
-  name: string;
-  type: string;
-  review: string;
-}
-
-interface Props {
-  testimonialData: Testimonial[];
-}
+import { motion } from "motion/react";
 
 type TestimonialCardProps = {
   testimonial: string;
@@ -75,60 +59,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 };
 
 export default function Testimonial() {
-  const sectionRef = useRef(null);
-  const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
-  const testimonialRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  useGSAP(
-    () => {
-      gsap.fromTo(
-        titleRef.current,
-        { y: 10, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: titleRef.current,
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
-      gsap.fromTo(
-        subtitleRef.current,
-        { y: 10, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          delay: 0.5,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: subtitleRef.current,
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
-      gsap.fromTo(
-        testimonialRef.current,
-        { y: 30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 2,
-          delay: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: testimonialRef.current,
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
-    },
-    { scope: sectionRef, revertOnUpdate: true }
-  );
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonialData.length);
   };
@@ -138,18 +69,33 @@ export default function Testimonial() {
     );
   };
   return (
-    <div
-      ref={sectionRef}
-      className="bg-[#fafafb] pt-5 md:py-10 xl:py-15 2xl:py-20"
-    >
-      <div className="px-5 md:px-10 xl:px-15 2xl:px-20">
-        <h4 ref={titleRef}>What our clients say</h4>
-        <p ref={subtitleRef} className="my-1 md:my-2 xl:my-4">
+    <div className="bg-[#fafafb] pt-5 md:py-10 xl:py-15 2xl:py-20">
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
+        className="px-5 md:px-10 xl:px-15 2xl:px-20"
+      >
+        <h4>What our clients say</h4>
+        <p className="my-1 md:my-2 xl:my-4">
           Every trek tells a story—here are a few from those who walked the
           trails with us.
         </p>
-      </div>
-      <div ref={testimonialRef} className="relative w-full overflow-hidden">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
+        className="relative w-full overflow-hidden"
+      >
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{
@@ -193,7 +139,7 @@ export default function Testimonial() {
             →
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

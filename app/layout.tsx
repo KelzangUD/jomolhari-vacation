@@ -16,7 +16,8 @@ export const metadata: Metadata = {
     default: "Jomolhari Vacation",
     template: "%s | Jomolhari Vacation",
   },
-  description: "Experience the life of Highlanders in all Seasons with Reasons.",
+  description:
+    "Experience the life of Highlanders in all Seasons with Reasons.",
   keywords: [
     "Jomolhari Vacation",
     "Bhutan Travel",

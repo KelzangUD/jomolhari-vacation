@@ -1,4 +1,6 @@
+"use client";
 // import ImageGrid from "./components/ImageGrid";
+import { motion } from "motion/react";
 import Masonry from "@/components/Masonry";
 
 const items = [
@@ -21,12 +23,19 @@ const items = [
 
 export default function Gallery() {
   return (
-    <div className="p-5 md:p-10 xl:p-15 2xl:p-20  bg-white">
-      <h4>Gallery</h4>
-      <p className="my-4">
-        Explore the breathtaking landscapes and vibrant culture of Bhutan
-        through our curated collection of photos and videos from our treks.
-      </p>
+    <section className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-white">
+      <motion.div
+        initial={{ y: -30 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
+      >
+        <h4>Gallery</h4>
+        <p className="my-4">
+          Explore the breathtaking landscapes and vibrant culture of Bhutan
+          through our curated collection of photos and videos from our treks.
+        </p>
+      </motion.div>
       {/* <ImageGrid /> */}
       <div>
         <Masonry
@@ -41,6 +50,6 @@ export default function Gallery() {
           colorShiftOnHover={false}
         />
       </div>
-    </div>
+    </section>
   );
 }

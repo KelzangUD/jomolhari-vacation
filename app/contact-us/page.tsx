@@ -9,15 +9,9 @@ export default function Contact() {
         our trekking/hiking adventure’s in Bhutan. You can reach us directly via
         phone or whatsapp or email.
       </p>
-      <p className="block bg-gray-100 rounded p-2 my-1 xl:my-2 italic text-xs md:text-sm">
-        (Please click on Icon button to contact us.)
-      </p>
-      <div className="mt-6 xl:mt-10">
-        <div className="flex items-center gap-2 xl:gap-10 my-4 xl:my-10">
-          <a
-            className="p-2 xl:p-4 rounded-md bg-blue-100 cursor-pointer"
-            href="tel:+97517914799"
-          >
+      <div className="my-4 xl:my-10">
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-2 xl:gap-10">
             <div className="relative w-4 h-4 2xl:w-6 2xl:h-6">
               <Image
                 src="/phone.svg"
@@ -26,17 +20,22 @@ export default function Contact() {
                 className="object-cover"
               />
             </div>
-          </a>
-          <span className="ml-2">
-            <p className="text-sm xl:text-base">Phone/whatsapp info</p>
-            <p className="text-secondary text-sm xl:text-base ">+97517914799</p>
+            <span className="ml-2">
+              <p className="text-sm xl:text-base">Phone/whatsapp info</p>
+              <p className="text-secondary text-sm xl:text-base ">
+                +97517914799
+              </p>
+            </span>
           </span>
-        </div>
-        <div className="flex items-center gap-2 xl:gap-10 my-4 xl:my-10">
           <a
-            className="p-2 xl:p-4 rounded-md bg-blue-100 cursor-pointer"
-            href="mailto:sonamvacation@gmail.com"
+            className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-blue-500"
+            href="tel:+97517914799"
           >
+            Call
+          </a>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-2 xl:gap-10">
             <div className="relative w-4 h-4 2xl:w-6 2xl:h-6">
               <Image
                 src="/Mail.svg"
@@ -45,13 +44,19 @@ export default function Contact() {
                 className="object-cover"
               />
             </div>
-          </a>
-          <span className="ml-2">
-            <p className="text-sm xl:text-base">Mail</p>
-            <p className="text-secondary text-sm xl:text-base ">
-              sonamvacation@gmail.com
-            </p>
+            <span className="ml-2">
+              <p className="text-sm xl:text-base">Mail</p>
+              <p className="text-secondary text-sm xl:text-base ">
+                sonamvacation@gmail.com
+              </p>
+            </span>
           </span>
+          <a
+            className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-blue-500"
+            href="mailto:sonamvacation@gmail.com"
+          >
+            Send Mail
+          </a>
         </div>
       </div>
       <div>

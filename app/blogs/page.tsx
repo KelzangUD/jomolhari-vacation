@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import himalayasImage from "@/public/himalayas.jpg";
 import valleyImage from "@/public/valley.jpg";
 import Card from "../components/Card";
+import { motion } from "motion/react";
 
 const blogData = [
   {
@@ -24,13 +26,24 @@ const blogData = [
 
 export default function Blogs() {
   return (
-    <div className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-white">
-      <h4>Blog</h4>
-      <p className="my-2 xl:my-4">
-        <b>Beyond reach</b>-experiences that inspire
-        your next adventure.
-      </p>
-      <div className="relative">
+    <section className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-white">
+      <motion.div
+        initial={{ y: -30 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
+      >
+        <h4>Blog</h4>
+        <p className="my-2 xl:my-4">
+          <b>Beyond reach</b>-experiences that inspire your next adventure.
+        </p>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="relative"
+      >
         <input
           placeholder="Search for article"
           className="border border-border py-2 px-6 rounded-2xl bg-border/10 w-full my-2 pl-12"
@@ -42,7 +55,7 @@ export default function Blogs() {
           height={20}
           className="absolute top-5 left-4"
         />
-      </div>
+      </motion.div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xl:gap-10 mt-4 xl:mt-6">
         {blogData.map((blog) => (
           <Card
@@ -57,6 +70,6 @@ export default function Blogs() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

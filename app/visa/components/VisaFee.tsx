@@ -1,11 +1,25 @@
 import Image from "next/image";
 import flowerIcon from "@/public/flower.svg";
-import documentIcon from "@/public/document.svg";
-import notesIcon from "@/public/notes.svg"
+import notesIcon from "@/public/notes.svg";
+import { motion } from "motion/react";
 
 export default function VisaFee() {
   return (
-    <section className="p-4 md:p-6 xl:p-8 bg-white rounded-md md:rounded-2xl shadow">
+    <motion.div
+      initial={{
+        x: -10,
+        opacity: 0.7,
+      }}
+      whileInView={{
+        x: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+      }}
+      viewport={{ once: false }}
+      className="p-4 md:p-6 xl:p-8 bg-white rounded-md md:rounded-2xl shadow"
+    >
       <h6 className="font-semibold">
         Visa Fees & Sustainable Development Fee (SDF)
       </h6>
@@ -63,11 +77,11 @@ export default function VisaFee() {
           href="https://immi.gov.bt/faq/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 items-center text-xs md:text-sm rounded-md cursor-pointer underline-offset-5 hover:underline hover:font-semibold transition ease-in-out duration-150"
+          className="text-blue-500 items-center text-xs md:text-sm rounded-md cursor-pointer underline-offset-5 hover:underline hover:font-semibold transition ease-in-out duration-150"
         >
           For More Info →
         </a>
       </div>
-    </section>
+    </motion.div>
   );
 }

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import CursorFollower from "./components/CursorFollower";
 import Container from "./ui/container";
 import Nav from "./Nav";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 import Footer from "./Footer";
 import Loader from "./ui/Loader";
 
@@ -32,6 +33,7 @@ export default function ClientLayout({
         <>
           <Nav />
           <main>
+            <ScrollProgressBar />
             <Container>
               {children}
               <Footer />

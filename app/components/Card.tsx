@@ -1,13 +1,8 @@
 "use client";
 
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
-gsap.registerPlugin(ScrollTrigger);
 
 // import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
@@ -41,38 +36,20 @@ const Card: React.FC<CardProps> = ({
   link,
 }) => {
   const router = useRouter();
-  const cardRef = useRef(null);
-  useGSAP(
-    () => {
-      gsap.fromTo(
-        cardRef.current,
-        {
-          y: 10,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 3,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: cardRef.current,
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
-    },
-    { scope: cardRef, revertOnUpdate: true }
-  );
   return (
-    <button
-      ref={cardRef}
+    <motion.button
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: false }}
       className="relative rounded-md md:rounded-2xl overflow-hidden group hover:cursor-pointer"
       onClick={() => {
         link ? router.push(link) : null;
       }}
     >
-      {/* Image wrapper */}
       <div className={`w-full relative ${height}`}>
         <Image
           src={image}
@@ -81,8 +58,6 @@ const Card: React.FC<CardProps> = ({
           className="object-cover transform transition-transform duration-500 ease-out group-hover:scale-110"
         />
       </div>
-
-      {/* Floating button */}
       {link !== undefined && (
         <div className="absolute top-5 right-5 z-50">
           <Link href={link} className="hover:cursor-pointer">
@@ -97,10 +72,7 @@ const Card: React.FC<CardProps> = ({
           </Link>
         </div>
       )}
-
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-40 z-10" />
-      {/* Text content */}
       <div className="absolute inset-0 z-20 flex flex-col justify-end p-4">
         <h6 className="font-bold text-white lg:text-xl 2xl:text-2xl text-left">
           {title}
@@ -126,7 +98,7 @@ const Card: React.FC<CardProps> = ({
           {desc}
         </p>
       </div>
-    </button>
+    </motion.button>
   );
 };
 

@@ -4,6 +4,7 @@ import passportIcon from "@/public/passport.svg";
 import airplaneIcon from "@/public/airplane.svg";
 import cameraIcon from "@/public/camera.svg";
 import cardIcon from "@/public/card.svg";
+import { motion } from "motion/react";
 
 const ListItem = ({
   icon,
@@ -26,7 +27,21 @@ const ListItem = ({
 
 export default function Apply() {
   return (
-    <section className="p-4 md:p-6 xl:p-8 bg-white rounded-md md:rounded-2xl shadow">
+    <motion.div
+      initial={{
+        x: 10,
+        opacity: 0.7,
+      }}
+      whileInView={{
+        x: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+      }}
+      viewport={{ once: false }}
+      className="p-4 md:p-6 xl:p-8 bg-white rounded-md md:rounded-2xl shadow"
+    >
       <h6 className="font-semibold">What You’ll Need to Apply</h6>
       <p className="text-xs md:text-base text-secondary">
         To apply for a visa online, please prepare:
@@ -54,17 +69,25 @@ export default function Apply() {
         avoid delays.)
       </i>
       <div className="mt-6">
-        {" "}
-        <a
+        <motion.a
+          initial={{
+            y: 0,
+          }}
+          whileHover={{
+            y: -5,
+          }}
+          whileTap={{
+            scale: 0.9,
+          }}
           href="https://immi.gov.bt/home/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-primary text-sm text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition"
+          className="inline-block bg-blue-600 text-sm text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition"
         >
           {" "}
           Apply for Visa{" "}
-        </a>{" "}
+        </motion.a>{" "}
       </div>
-    </section>
+    </motion.div>
   );
 }

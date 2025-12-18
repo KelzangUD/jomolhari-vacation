@@ -1,18 +1,15 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
-// import { SafeHtmlRenderer } from "../../components/SafeHtmlRenderer";
 import { packageData } from "../../data/packageData";
 import TrekOverview from "./components/TrekOverview";
 import ItineraryOverview from "./components/ItineraryOverview";
-import PackagePricing from "./components/PackagePricing";
 import Services from "./components/Services";
 import TermsAndCondition from "./components/TermsAndCondition";
-import phoneIcon from "@/public/phone.svg";
+import Contact from "@/app/components/Contact";
+import { motion } from "motion/react";
 
 type itineraryOverviewProps = {
   day: number;
@@ -84,7 +81,20 @@ export default function Trek() {
 
   return (
     <div className="z-10 p-5 md:p-10 xl:p-25 bg-white">
-      <h4>{contain?.title}</h4>
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: -60,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
+      >
+        <h4>{contain?.title}</h4>
+      </motion.div>
       <div className="flex flex-col md:flex-row md:justify-between gap-6 my-4 md:my-10">
         <TrekOverview
           trekOverview={contain?.trekOverview}
@@ -92,105 +102,34 @@ export default function Trek() {
           difficulty={contain?.difficulty}
           groupSize={contain?.groupSize}
         />
-        <div className="relative w-full h-70 align-right rounded-md md:rounded-2xl overflow-hidden shadow">
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: 60,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+          className="relative w-full h-70 align-right rounded-md md:rounded-2xl overflow-hidden shadow"
+        >
           <Image
             src={contain?.image}
             alt={contain?.title}
             fill
             className="object-cover"
           />
-        </div>
+        </motion.div>
       </div>
       <ItineraryOverview itineraryOverview={contain?.itineraryOverview} />
-      {/* <PackagePricing
-        header={contain?.packagePricing?.header}
-        tableContain={contain?.packagePricing?.tableContain}
-        pricingPerHead={contain?.packagePricing?.pricingPerHead}
-      /> */}
-      <Services inclusive={contain?.inclusive} exclusive={contain?.exclusive} />
+      <Services exclusive={contain?.exclusive} />
       <TermsAndCondition />
-      <div className="my-8 xl:mt-10">
-        <h6 className="my-1">For More Information</h6>
-        <p className="text-sm md:text-xl">
-          For any inquires, you can reach us directly via phone or whatsapp.
-        </p>
-        <div className="flex items-center justify-between">
-          <span className="flex items-center gap-2 xl:gap-10">
-            <div className="relative w-4 h-4 2xl:w-6 2xl:h-6">
-              <Image
-                src="/phone.svg"
-                alt="phone"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <span className="ml-2">
-              <p className="text-sm xl:text-base">Phone/whatsapp info</p>
-              <p className="text-secondary text-sm xl:text-base ">
-                +97517914799
-              </p>
-            </span>
-          </span>
-          <motion.div
-            initial={{
-              scale: 1,
-              y: 0,
-            }}
-            whileHover={{
-              y: -3,
-              scale: 1.1,
-            }}
-            whileTap={{
-              scale: 0.9,
-            }}
-          >
-            <a
-              className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-xs md:text-base text-blue-500"
-              href="tel:+97517914799"
-            >
-              Call
-            </a>
-          </motion.div>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="flex items-center gap-2 xl:gap-10">
-            <div className="relative w-4 h-4 2xl:w-6 2xl:h-6">
-              <Image
-                src="/Mail.svg"
-                alt="phone"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <span className="ml-2">
-              <p className="text-sm xl:text-base">Mail</p>
-              <p className="text-secondary text-sm xl:text-base ">
-                sonamvacation@gmail.com
-              </p>
-            </span>
-          </span>
-          <motion.div
-            initial={{
-              scale: 1,
-              y: 0,
-            }}
-            whileHover={{
-              y: -3,
-              scale: 1.1,
-            }}
-            whileTap={{
-              scale: 0.9,
-            }}
-          >
-            <a
-              className="px-6 py-2 rounded-md bg-blue-100 cursor-pointer font-bold text-xs md:text-base text-blue-500"
-              href="mailto:sonamvacation@gmail.com"
-            >
-              Send Mail
-            </a>
-          </motion.div>
-        </div>
-      </div>
+      <Contact
+        title="For More Information"
+        subtitle="For any inquires, you can reach us directly via phone or whatsapp or mail"
+      />
     </div>
   );
 }

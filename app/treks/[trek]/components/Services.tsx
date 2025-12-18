@@ -5,14 +5,7 @@ import foodIcon from "@/public/food.svg";
 import gearIcon from "@/public/gear.svg";
 import otherIcon from "@/public/other.svg";
 import excludeIcon from "@/public/exclude.svg";
-
-type InclusiveProps = {
-  supportAndStaff: string;
-  logistics: string;
-  accommodationAndMeals: string;
-  equipment: string;
-  Other: string;
-};
+import { motion } from "motion/react";
 
 const ListItem = ({
   icon,
@@ -24,7 +17,19 @@ const ListItem = ({
   sub?: string;
 }) => {
   return (
-    <li className="flex gap-4">
+    <motion.li
+      initial={{
+        opacity: 0,
+        y: 60,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: false }}
+      className="flex gap-4"
+    >
       <div className="absolute w-4 h-4 mt-2">
         <Image src={icon} alt={main} fill className="object-contain" />
       </div>
@@ -36,17 +41,11 @@ const ListItem = ({
           </span>
         </p>
       </div>
-    </li>
+    </motion.li>
   );
 };
 
-export default function Services({
-  inclusive,
-  exclusive,
-}: {
-  inclusive?: InclusiveProps;
-  exclusive?: string[];
-}) {
+export default function Services({ exclusive }: { exclusive?: string[] }) {
   return (
     <div className="my-8 grid md:grid-cols-2 gap-8">
       <div>
@@ -55,24 +54,28 @@ export default function Services({
           <ListItem
             icon={usersIcon}
             main="Supporting Staff"
-            sub={inclusive?.supportAndStaff}
+            sub="Potter ponies, professional trekking guide, Trekking cook, and trekking assistance"
           />
           <ListItem
             icon={carIcon}
             main="Logistics"
-            sub={inclusive?.logistics}
+            sub="Transportation (Drop & Pick)."
           />
           <ListItem
             icon={foodIcon}
             main="Accommodation And Meals"
-            sub={inclusive?.accommodationAndMeals}
+            sub="Accommodation (Tent, Guest House & Farm house), all meals (B, L & D), fruits, tea & snacks, and boiled drinking water."
           />
           <ListItem
             icon={gearIcon}
             main="Equipment"
-            sub={inclusive?.equipment}
+            sub="Sleeping Tent, solar lamp, pillow, hot water bag, kitchen sets, kitchen tent, toilet."
           />
-          <ListItem icon={otherIcon} main="Other" sub={inclusive?.Other} />
+          <ListItem
+            icon={otherIcon}
+            main="Other"
+            sub="Hot water for morning/evening washing and First Aid Kit."
+          />
         </ul>
       </div>
       <div>

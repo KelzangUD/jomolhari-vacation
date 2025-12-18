@@ -91,7 +91,7 @@ export default function ParallaxPage() {
       >
         <div className="sky-layer absolute inset-0 w-full h-full">
           <Image
-            src="/main-sky.jpg"
+            src="/main-sky.webp"
             alt="Sky"
             fill
             className="object-cover"
@@ -109,7 +109,7 @@ export default function ParallaxPage() {
         </div>
         <div className="mount-mg-layer absolute inset-0 w-full h-[inherit] z-7">
           <Image
-            src="/mountMg.png"
+            src="/mountMg.webp"
             alt="Middle Mountains"
             fill
             className="object-cover"
@@ -125,7 +125,7 @@ export default function ParallaxPage() {
         </div>
         <div className="mount-fg-layer absolute inset-0 w-full h-[inherit] z-7">
           <Image
-            src="/mountFg.png"
+            src="/mountFg.webp"
             alt="Foreground Mountains"
             fill
             className="object-cover"
@@ -133,7 +133,7 @@ export default function ParallaxPage() {
         </div>
         <div className="cloud1-layer absolute inset-0 w-full h-[inherit] z-10">
           <Image
-            src="/cloud1.png"
+            src="/cloud1.webp"
             alt="Cloud 1"
             fill
             className="object-cover"
@@ -141,7 +141,7 @@ export default function ParallaxPage() {
         </div>
         <div className="cloud3-layer absolute inset-0 w-full h-[inherit] z-10">
           <Image
-            src="/cloud3.png"
+            src="/cloud3.webp"
             alt="Cloud 3"
             fill
             className="object-cover"

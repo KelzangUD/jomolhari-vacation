@@ -65,16 +65,6 @@ export const packageData = [
       ],
       pricingPerHead: "Nu. 41,000/-",
     },
-    inclusive: {
-      supportAndStaff:
-        "Potter ponies, professional trekking guide, Trekking cook, and trekking assistance",
-      logistics: "Transportation from Paro (Drop & Pick).",
-      accommodationAndMeals:
-        "Accommodation (Tent, Guest House & Farm house), all meals (B, L & D), fruits, tea & snacks, and boiled drinking water.",
-      equipment:
-        "Sleeping Tent, solar lamp, pillow, hot water bag, kitchen sets, kitchen tent, toilet.",
-      Other: "Hot water for morning/evening washing and First Aid Kit.",
-    },
     exclusive: [
       "Riding Horse: (USD 24/day if arranged).",
       "Personal Gear: Trekking gears.",

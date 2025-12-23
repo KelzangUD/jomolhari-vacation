@@ -52,9 +52,6 @@ const NumberCard: React.FC<NumberCardProps> = ({ icon, title, number }) => {
 };
 
 export default function Numbers({ numbers }: { numbers: any[] }) {
-  useEffect(() => {
-    console.log(numbers[0]);
-  }, []);
   return (
     <section className="p-5 md:p-10 xl:x-15 2xl:p-20 bg-black text-white">
       <motion.div

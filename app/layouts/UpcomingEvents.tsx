@@ -1,13 +1,17 @@
 "use client";
 
+import { useEffect } from "react";
 import Card from "../components/Card";
 import { motion } from "motion/react";
-import { upcomingEventsData } from "../data/upcomingEventsData";
 
-export default function UpcomingEvents() {
+export default function UpcomingEvents({
+  upcomingEvents,
+}: {
+  upcomingEvents: any[];
+}) {
   return (
     <>
-      {upcomingEventsData?.length > 0 && (
+      {upcomingEvents?.length > 0 && (
         <section className="p-5 pb-10 md:pb-15 xl:pb-20 2xl:pb-25 md:p-10 xl:p-15 2xl:p-20 bg-gray-100">
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -24,14 +28,14 @@ export default function UpcomingEvents() {
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 my-5 md:my-10">
-            {upcomingEventsData?.map((item) => (
+            {upcomingEvents?.map((item) => (
               <Card
-                image={item?.image}
-                title={item?.title}
+                image={item?.fields?.image?.fields?.file?.url}
+                title={item?.fields?.title}
                 height="h-60 lg:h-80 xl:h-100"
-                date={item?.date}
-                location={item?.location}
-                key={item?.title}
+                date={item?.fields?.date}
+                location={item?.fields?.location}
+                key={item?.fields?.title}
               />
             ))}
           </div>

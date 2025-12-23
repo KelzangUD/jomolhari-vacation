@@ -1,10 +1,10 @@
 import ContentfulData from "@/lib/contentfulData";
-import TrekPage from "./trekpage";
+import FeaturePackage from "./FeaturePackages";
 
 export default function FeaturePackageServer() {
   return (
     <ContentfulData>
-      {({ packages }) => <TrekPage packages={packages} />}
+      {({ packages }) => <FeaturePackage packages={packages} />}
     </ContentfulData>
   );
 }

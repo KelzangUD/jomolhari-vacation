@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import Image, { StaticImageData } from "next/image";
 
 type CardProps = {
-  image: StaticImageData;
+  image: StaticImageData | string;
   title: string;
   subtitle?: string;
   author?: string;
@@ -36,6 +36,10 @@ const Card: React.FC<CardProps> = ({
   link,
 }) => {
   const router = useRouter();
+  const imageSrc =
+    typeof image === "string" && image.startsWith("//")
+      ? `https:${image}`
+      : image;
   return (
     <motion.button
       initial={{ opacity: 0, y: 60 }}
@@ -52,7 +56,7 @@ const Card: React.FC<CardProps> = ({
     >
       <div className={`w-full relative ${height}`}>
         <Image
-          src={image}
+          src={imageSrc}
           alt={title}
           fill
           className="object-cover transform transition-transform duration-500 ease-out group-hover:scale-110"

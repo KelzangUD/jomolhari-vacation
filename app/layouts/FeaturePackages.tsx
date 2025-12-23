@@ -1,13 +1,17 @@
 "use client";
+import { useEffect } from "react";
 import { motion } from "motion/react";
-
 import Link from "next/link";
 import arrowRightIcon from "@/public/arrow-right.svg";
 import Card from "../components/Card";
 import PrimaryButton from "../ui/PrimaryButton";
-import { packageData } from "../data/packageData";
+// import { packageData } from "../data/packageData";
 
-export default function FeaturePackage() {
+type Props = {
+  packages: any[];
+};
+
+export default function FeaturePackage({ packages }: Props) {
   return (
     <section className="z-10 p-5 md:p-10 xl:p-15 2xl:py-20 2xl:px-20 bg-white">
       <motion.div
@@ -23,14 +27,14 @@ export default function FeaturePackage() {
         </p>
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 my-5 md:my-10">
-        {packageData?.map((item) => (
+        {packages?.map((item) => (
           <Card
-            image={item?.image}
-            title={item?.title}
-            subtitle={`${item?.packageDuration} | ${item?.packageFee}`}
+            image={item?.fields.image.fields.file.url}
+            title={item?.fields?.title}
+            subtitle={`${item?.fields.packageDuration} | ${item?.fields.packageFee}`}
             height="h-50 lg:h-60 xl:h-70"
-            link={`/treks/${item?.title}`}
-            key={item?.title}
+            link={`/treks/${item?.fields.title}`}
+            key={item?.fields.title}
           />
         ))}
       </div>

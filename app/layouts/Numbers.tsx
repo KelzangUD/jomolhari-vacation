@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
 import tentIcon from "@/public/tents.svg";
 import hikerIcon from "@/public/hiker.svg";
@@ -50,7 +51,10 @@ const NumberCard: React.FC<NumberCardProps> = ({ icon, title, number }) => {
   );
 };
 
-export default function Numbers() {
+export default function Numbers({ numbers }: { numbers: any[] }) {
+  useEffect(() => {
+    console.log(numbers[0]);
+  }, []);
   return (
     <section className="p-5 md:p-10 xl:x-15 2xl:p-20 bg-black text-white">
       <motion.div
@@ -64,20 +68,21 @@ export default function Numbers() {
       >
         <h4>Number That Tell Our Story</h4>
         <p className="my-2 lg:my-4">
-          250+ treks, 1000+ trekkers, and countless unforgettable moments on the
-          trails of Bhutan.
+          {numbers[0]?.fields?.treksAndHikes}+ treks,{" "}
+          {numbers[0]?.fields?.trekkersAndHikers}+ trekkers, and countless
+          unforgettable moments on the trails of Bhutan.
         </p>
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 mt-4 xl:mt-6">
         <NumberCard
           icon={tentIcon}
           title="Treks/Hikes Organized"
-          number={250}
+          number={numbers[0]?.fields?.treksAndHikes}
         />
         <NumberCard
           icon={hikerIcon}
           title="Happy Trekkers/Hikers"
-          number={1000}
+          number={numbers[0]?.fields?.trekkersAndHikers}
         />
       </div>
     </section>

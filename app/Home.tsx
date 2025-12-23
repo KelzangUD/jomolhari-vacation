@@ -1,7 +1,7 @@
 import ParallaxPage from "./layouts/ParallaxPage";
 import FeaturePackageServer from "./layouts/FeaturePackage.server";
 import WhyChooseUs from "./layouts/WhyChooseUs";
-import Numbers from "./layouts/Numbers";
+import NumbersServer from "./layouts/Numbers.server";
 import UpcomingEvents from "./layouts/UpcomingEvents";
 import Testimonial from "./layouts/Testimonial";
 import FAQ from "./layouts/FAQ";
@@ -13,7 +13,7 @@ export default function Home() {
       <ParallaxPage />
       <FeaturePackageServer />
       <WhyChooseUs />
-      <Numbers />
+      <NumbersServer />
       <UpcomingEvents />
       <Testimonial />
       <FAQ />

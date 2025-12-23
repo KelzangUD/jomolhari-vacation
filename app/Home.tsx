@@ -1,5 +1,5 @@
 import ParallaxPage from "./layouts/ParallaxPage";
-import FeaturePackage from "./layouts/FeaturePackages";
+import FeaturePackageServer from "./layouts/FeaturePackage.server";
 import WhyChooseUs from "./layouts/WhyChooseUs";
 import Numbers from "./layouts/Numbers";
 import UpcomingEvents from "./layouts/UpcomingEvents";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <ParallaxPage />
-      <FeaturePackage />
+      <FeaturePackageServer />
       <WhyChooseUs />
       <Numbers />
       <UpcomingEvents />

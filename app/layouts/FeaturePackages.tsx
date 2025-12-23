@@ -1,11 +1,9 @@
 "use client";
-import { useEffect } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import arrowRightIcon from "@/public/arrow-right.svg";
 import Card from "../components/Card";
 import PrimaryButton from "../ui/PrimaryButton";
-// import { packageData } from "../data/packageData";
 
 type Props = {
   packages: any[];

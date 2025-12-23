@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Card from "../components/Card";
+// import Card from "../components/Card";
 import { motion } from "motion/react";
-import { packageData } from "../data/packageData";
 
 export default function Trails() {
   return (
@@ -45,7 +44,7 @@ export default function Trails() {
         />
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 xl:gap-6 my-6">
-        {packageData?.map((item) => (
+        {/* {packageData?.map((item) => (
           <Card
             image={item?.image}
             title={item?.title}
@@ -54,7 +53,7 @@ export default function Trails() {
             link={`/treks/${item?.title}`}
             key={item?.title}
           />
-        ))}
+        ))} */}
       </div>
     </section>
   );

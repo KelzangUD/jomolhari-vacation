@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import starIcon from "@/public/star.svg";
-import { testimonialData } from "../data/testimonialData";
 import { motion } from "motion/react";
 
 type TestimonialCardProps = {
@@ -58,15 +57,13 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   );
 };
 
-export default function Testimonial() {
+export default function Testimonial({ testimonial }: { testimonial: any[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonialData.length);
+    setCurrentIndex((prev) => (prev + 1) % testimonial.length);
   };
   const handlePrev = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? testimonialData.length - 1 : prev - 1
-    );
+    setCurrentIndex((prev) => (prev === 0 ? testimonial.length - 1 : prev - 1));
   };
   return (
     <div className="bg-[#fafafb] pt-5 md:py-10 xl:py-15 2xl:py-20">
@@ -102,18 +99,18 @@ export default function Testimonial() {
             transform: `translateX(-${currentIndex * 100}%)`,
           }}
         >
-          {testimonialData.map((item) => (
+          {testimonial.map((item) => (
             <div
-              key={item.testimonial}
-              className="w-full flex-shrink-0 flex justify-center items-center xl:px-2"
+              key={item?.fields?.testimonial}
+              className="w-full flex-shrink-0 flex justify-center items-center xl:px-2 my-4"
             >
               <div className="max-w-[80%] w-full">
                 <TestimonialCard
-                  testimonial={item.testimonial}
-                  name={item.name}
-                  type={item.type}
-                  review={item.review}
-                  key={item.testimonial}
+                  testimonial={item?.fields?.testimonial}
+                  name={item?.fields?.name}
+                  type={item?.fields?.type}
+                  review={item?.fields?.review}
+                  key={item?.fields?.testimonial}
                 />
               </div>
             </div>
@@ -131,7 +128,7 @@ export default function Testimonial() {
           <button
             onClick={handleNext}
             className={`bg-white/60 hover:bg-white text-black rounded-full px-1 py-0.5 md:px-2 md:py-1 shadow-md backdrop-blur-sm transition-opacity ${
-              currentIndex < testimonialData.length - 1
+              currentIndex < testimonial.length - 1
                 ? "opacity-100"
                 : "opacity-0 pointer-events-none"
             }`}

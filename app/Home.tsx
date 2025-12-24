@@ -3,8 +3,8 @@ import FeaturePackageServer from "./layouts/FeaturePackage.server";
 import WhyChooseUs from "./layouts/WhyChooseUs";
 import NumbersServer from "./layouts/Numbers.server";
 import UpcomingEventsServer from "./layouts/UpcomingEvents.server";
-import Testimonial from "./layouts/Testimonial";
-import FAQ from "./layouts/FAQ";
+import TestimonialServer from "./layouts/Testimonial.server";
+import FAQServer from "./layouts/FAQ.server";
 import ReactOut from "./layouts/ReactOut";
 
 export default function Home() {
@@ -15,8 +15,8 @@ export default function Home() {
       <WhyChooseUs />
       <NumbersServer />
       <UpcomingEventsServer />
-      <Testimonial />
-      <FAQ />
+      <TestimonialServer />
+      <FAQServer />
       <ReactOut />
     </>
   );

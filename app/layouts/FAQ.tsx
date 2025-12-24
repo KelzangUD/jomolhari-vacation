@@ -1,9 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 import { faqData } from "../data/faqData";
 import {
   Accordion,
@@ -13,9 +10,10 @@ import {
 } from "@/components/animate-ui/primitives/headless/Accordion";
 import { motion } from "motion/react";
 
-gsap.registerPlugin(ScrollTrigger);
-
-export default function FAQ() {
+export default function FAQ({ faq }: { faq: any[] }) {
+  useEffect(() => {
+    console.log(faq);
+  }, []);
   return (
     <section className="p-5 md:p-10 xl:p-15 2xl:p-20 bg-gray-100">
       <motion.div
@@ -42,14 +40,14 @@ export default function FAQ() {
         viewport={{ once: false }}
       >
         <Accordion>
-          {faqData.map((item, index) => (
-            <AccordionItem key={item?.question}>
+          {faq.map((item, index) => (
+            <AccordionItem key={item?.fields?.question}>
               <AccordionButton>
-                {index + 1}.  {item?.question}
+                {index + 1}. {item?.fields?.question}
               </AccordionButton>
               <AccordionPanel>
-                <div className="text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-gray-700">
-                  {item?.answer}
+                <div className="text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-gray-700 whitespace-pre-line">
+                  {item?.fields?.answer}
                 </div>
               </AccordionPanel>
             </AccordionItem>
